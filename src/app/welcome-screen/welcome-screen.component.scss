@@ -1,0 +1,20 @@
+#welcome-screen {
+  padding-top: 15vh;
+  height: 85vh;
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  background-image: url("https://cdn.discordapp.com/attachments/1234076578439499836/1349003813838651504/background.png?ex=67d18534&is=67d033b4&hm=4935ef0384d08a7b31c1db3884c7b8e8f57c96008fdd5cd348a994e9cb4660e3&");
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+p {
+  color: white;
+  margin-right: 250px;
+  margin-bottom: 70px;
+  text-align: center;
+  font-size: 40px;
+  position: absolute;
+  font-weight: bold;
+}
