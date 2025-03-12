@@ -10,10 +10,21 @@ header {
   z-index: 1;
 }
 
+a {
+  text-decoration: none;
+  color: black;
+}
+
+.shopping-cart-image {
+  margin-top: 4vh;
+  margin-left: auto;
+  cursor: pointer;
+}
+
 .admin-panel-list {
   list-style: none;
   margin-top: 45px;
-  margin-left: auto;
+  margin-right: auto;
 
   a {
     background-color: #f0f0f0;

@@ -9,7 +9,7 @@
   background-size: cover;
 }
 
-p {
+#welcome-text {
   color: white;
   margin-right: 250px;
   margin-bottom: 70px;
@@ -17,4 +17,11 @@ p {
   font-size: 40px;
   position: absolute;
   font-weight: bold;
+}
+
+#scroll-down {
+  color: white;
+  margin-top: 65vh;
+  margin-right: 24.65vw;
+  opacity: 50%;
 }
