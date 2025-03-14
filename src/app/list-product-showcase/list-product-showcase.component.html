@@ -1,6 +1,6 @@
 <section id="product-showcase-list-container">
 
-  @for (Dummyproduct of DummyProducts ; track DummyProducts){
+  @for (Dummyproduct of DummyProducts ; track Dummyproduct.product_naam){
     <app-product-showcase productnaam="{{Dummyproduct.product_naam}}" fotolocatie="{{Dummyproduct.img_product}}"/>
   }
 
