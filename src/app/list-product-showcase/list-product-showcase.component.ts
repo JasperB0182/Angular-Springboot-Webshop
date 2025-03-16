@@ -1,6 +1,6 @@
-import {Component, DestroyRef, inject, Input} from '@angular/core';
+import {Component, DestroyRef, inject} from '@angular/core';
 import {ProductShowcaseComponent} from "../product-showcase/product-showcase.component";
-import {HttpClient, provideHttpClient} from '@angular/common/http';
+import {HttpClient} from '@angular/common/http';
 import {Product} from '../models/product-model';
 
 @Component({
