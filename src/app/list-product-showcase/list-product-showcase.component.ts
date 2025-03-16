@@ -14,14 +14,13 @@ import {Product} from '../models/product-model';
 export class ListProductShowcaseComponent {
   private httpClient = inject(HttpClient)
   private destroyRef = inject(DestroyRef)
-  DummyProducts: any;
+  ShowcaseProducts: any;
 
 
   ngOnInit() {
     const subscription = this.httpClient.get<{Product : Product}>("http://localhost:8080/api/products").subscribe({
       next: (resData) => {
-        this.DummyProducts = resData;
-        console.log(resData)
+        this.ShowcaseProducts = resData;
       }
     });
 

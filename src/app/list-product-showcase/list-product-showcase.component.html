@@ -1,8 +1,8 @@
 <section id="product-showcase-list-container">
 
-  @if (DummyProducts?.length){
-    @for (Dummyproduct of DummyProducts.slice(0, 6) ; track Dummyproduct.product_naam){
-      <app-product-showcase productnaam="{{Dummyproduct.product_naam}}" fotolocatie="{{Dummyproduct.img_product}}"/>
+  @if (ShowcaseProducts?.length){
+    @for (Showcaseproduct of ShowcaseProducts.slice(0, 6) ; track Showcaseproduct.product_naam){
+      <app-product-showcase productnaam="{{Showcaseproduct.product_naam}}" fotolocatie="{{Showcaseproduct.img_product}}"/>
     }
   } @else {
     <p>Loading products..</p>
