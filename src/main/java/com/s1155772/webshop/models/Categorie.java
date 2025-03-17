@@ -5,8 +5,10 @@ import jakarta.persistence.*;
 
 import java.util.List;
 
+//Problemen? Check de constructor!!!
+
 @Entity
-public class Category {
+public class Categorie {
 
     @Id
     @GeneratedValue
@@ -14,15 +16,15 @@ public class Category {
 
     private String categoryName;
 
-    @OneToMany(mappedBy = "category")
+    @OneToMany(mappedBy = "categorie")
     @JsonIgnoreProperties("category")
-    private List<Products> products;
+    private List<Product> products;
 
-    public Category(String categoryName) {
+    public Categorie(String categoryName) {
         this.categoryName = categoryName;
     }
 
-    public Category(){
+    public Categorie(){
 
     }
 
@@ -34,11 +36,11 @@ public class Category {
         this.categoryName = categoryName;
     }
 
-    public List<Products> getProducts() {
+    public List<Product> getProducts() {
         return products;
     }
 
-    public void setProducts(List<Products> products) {
+    public void setProducts(List<Product> products) {
         this.products = products;
     }
 

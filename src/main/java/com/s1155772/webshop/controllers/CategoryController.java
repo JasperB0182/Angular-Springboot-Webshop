@@ -1,8 +1,7 @@
 package com.s1155772.webshop.controllers;
 
 import com.s1155772.webshop.dao.CategoryDAO;
-import com.s1155772.webshop.models.Category;
-import com.s1155772.webshop.models.Products;
+import com.s1155772.webshop.models.Categorie;
 import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -21,7 +20,7 @@ public class CategoryController {
     }
 
     @GetMapping
-    public List<Category> getAllCategories(){
+    public List<Categorie> getAllCategories(){
         return this.categoryDAO.getAllCategories();
     }
 }

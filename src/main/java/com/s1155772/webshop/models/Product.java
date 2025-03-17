@@ -3,8 +3,12 @@ package com.s1155772.webshop.models;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import jakarta.persistence.*;
 
+import java.util.List;
+
+//Problemen? Check de constructor!!!
+
 @Entity
-public class Products {
+public class Product {
 
     @Id
     @GeneratedValue
@@ -20,9 +24,12 @@ public class Products {
     private Brand brand;
 
     @ManyToOne
-    @JoinColumn(name = "category", nullable = false)
+    @JoinColumn(name = "categorie", nullable = false)
     @JsonIgnoreProperties("products")
-    private Category category;
+    private Categorie categorie;
+
+    @OneToMany(mappedBy = "product")
+    private List<BestellingProduct> bestellingProducten;
 
     private float prijs;
 
@@ -31,14 +38,25 @@ public class Products {
     @Column(length = 1000)
     private String beschrijving;
 
-    public Products(String productNaam, int hoeveelheid, Brand brand, Category Category, float prijs, String beschrijving, String imgProduct) {
+    public Product(String productNaam, int hoeveelheid, Brand brand, Categorie categorie, float prijs, String beschrijving, String imgProduct) {
         this.productNaam = productNaam;
         this.hoeveelheid = hoeveelheid;
-        this.category = Category;
+        this.categorie = categorie;
         this.brand = brand;
         this.prijs = prijs;
         this.beschrijving = beschrijving;
         this.imgProduct = imgProduct;
+    }
+
+    public Product(int hoeveelheid, String productNaam, Brand brand, Categorie categorie, List<BestellingProduct> bestellingProducten, float prijs, String imgProduct, String beschrijving) {
+        this.hoeveelheid = hoeveelheid;
+        this.productNaam = productNaam;
+        this.brand = brand;
+        this.categorie = categorie;
+        this.bestellingProducten = bestellingProducten;
+        this.prijs = prijs;
+        this.imgProduct = imgProduct;
+        this.beschrijving = beschrijving;
     }
 
     public String getImgProduct() {
@@ -49,16 +67,16 @@ public class Products {
         this.imgProduct = img_product;
     }
 
-    public Products() {
+    public Product() {
 
     }
 
-    public Category getCategory() {
-        return category;
+    public Categorie getCategorie() {
+        return categorie;
     }
 
-    public void setCategory(Category categorie) {
-        this.category = categorie;
+    public void setCategorie(Categorie categorie) {
+        this.categorie = categorie;
     }
 
     public String getProductNaam() {

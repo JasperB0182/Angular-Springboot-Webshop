@@ -8,6 +8,8 @@ import jakarta.persistence.OneToMany;
 
 import java.util.List;
 
+//Problemen? Check de constructor!!!
+
 @Entity
 public class Brand {
     @Id
@@ -20,7 +22,7 @@ public class Brand {
 
     @OneToMany(mappedBy = "brand")
     @JsonIgnoreProperties("brand")
-    private List<Products> products;
+    private List<Product> products;
 
     public Brand(String MerkNaam, String imgLocation) {
         this.merkNaam = MerkNaam;
@@ -31,11 +33,11 @@ public class Brand {
 
     }
 
-    public List<Products> getProducts() {
+    public List<Product> getProducts() {
         return products;
     }
 
-    public void setProducts(List<Products> products) {
+    public void setProducts(List<Product> products) {
         this.products = products;
     }
 

@@ -1,7 +1,7 @@
 package com.s1155772.webshop.controllers;
 
 
-import com.s1155772.webshop.models.Products;
+import com.s1155772.webshop.models.Product;
 import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -21,7 +21,7 @@ public class ProductsController {
     }
 
     @GetMapping
-    public List<Products> getAllproducts(){
+    public List<Product> getAllproducts(){
         return this.ProductsDAO.getAllProducts();
     }
 

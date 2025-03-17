@@ -1,6 +1,6 @@
 package com.s1155772.webshop.dao;
 
-import com.s1155772.webshop.models.Products;
+import com.s1155772.webshop.models.Product;
 import org.springframework.stereotype.Component;
 
 import java.util.List;
@@ -14,8 +14,8 @@ public class ProductsDAO {
         this.productsRepository = productsRepository;
     }
 
-    public List<Products> getAllProducts(){
-        List<Products> products = this.productsRepository.findAll();
+    public List<Product> getAllProducts(){
+        List<Product> products = this.productsRepository.findAll();
         return products;
     }
 }
