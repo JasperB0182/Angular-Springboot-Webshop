@@ -1,0 +1,11 @@
+<section id="product-showcase-list-container">
+
+  @if (ShowcaseProducts?.length){
+    @for (Showcaseproduct of ShowcaseProducts.slice(0, 6) ; track Showcaseproduct.id){
+      <app-product-showcase productnaam="{{Showcaseproduct.productNaam}}" fotolocatie="{{Showcaseproduct.imgProduct}}"/>
+    }
+  } @else {
+    <p>Loading products..</p>
+  }
+
+</section>
