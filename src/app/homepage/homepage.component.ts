@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
 import {HeaderComponent} from "../global/header/header.component";
-import {ProductSectionComponent} from "./product-section/product-section.component";
+import {ShowcaseProductSectionComponent} from "./product-section/showcase-product-section.component";
 import {WelcomeScreenComponent} from "./welcome-screen/welcome-screen.component";
 import {FooterComponent} from '../global/footer/footer.component';
 
@@ -8,7 +8,7 @@ import {FooterComponent} from '../global/footer/footer.component';
   selector: 'app-homepage',
   imports: [
     HeaderComponent,
-    ProductSectionComponent,
+    ShowcaseProductSectionComponent,
     WelcomeScreenComponent,
     FooterComponent
   ],

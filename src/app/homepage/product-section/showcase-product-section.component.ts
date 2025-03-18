@@ -7,9 +7,9 @@ import {ListProductShowcaseComponent} from '../list-product-showcase/list-produc
   imports: [
     ListProductShowcaseComponent
   ],
-  templateUrl: './product-section.component.html',
-  styleUrl: './product-section.component.scss'
+  templateUrl: './showcase-product-section.component.html',
+  styleUrl: './showcase-product-section.component.scss'
 })
-export class ProductSectionComponent {
+export class ShowcaseProductSectionComponent {
 
 }
