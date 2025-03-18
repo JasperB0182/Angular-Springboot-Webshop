@@ -45,17 +45,15 @@ public class Seeder {
         this.categoryRepository.save(processoren);
         this.categoryRepository.save(moederborden);
 
-        Brand Asus = new Brand("Asus", "NULL");
-        Brand MSI = new Brand("MSI", "NULL");
-        Brand INNO3D = new Brand("INNO3D", "NULL");
-        Brand Gigabyte = new Brand("Gigabyte", "NULL");
-        Brand PNY = new Brand("PNY", "NULL");
-        Brand AMD = new Brand("AMD", "NULL");
+        Brand Asus = new Brand("Asus", "https://icon-icons.com/icons2/3911/PNG/512/asus_logo_icon_247542.png");
+        Brand MSI = new Brand("MSI", "https://cdn.iconscout.com/icon/free/png-256/free-msi-1-286075.png");
+        Brand INNO3D = new Brand("INNO3D", "https://images.seeklogo.com/logo-png/38/1/inno3d-logo-png_seeklogo-386197.png");
+        Brand Gigabyte = new Brand("Gigabyte", "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSzXWXPZo00D9OsewodWmom-B7woZ3OT_EN1Q&s");
+        Brand AMD = new Brand("AMD", "https://cdn.freebiesupply.com/logos/large/2x/amd-logo-png-transparent.png");
         this.brandRepository.save(Asus);
         this.brandRepository.save(MSI);
         this.brandRepository.save(INNO3D);
         this.brandRepository.save(Gigabyte);
-        this.brandRepository.save(PNY);
         this.brandRepository.save(AMD);
 
         Product product = new Product("ASUS GeForce RTX 4070 DUAL-RTX 4070-O12G-EVO Videokaart", 2, Asus, videokaarten, 699, "De ASUS GeForce RTX 4070 DUAL-RTX 4070-O12G-EVO is een krachtige videokaart die ontworpen is voor veeleisende gaming en creatieve toepassingen. Met een GeForce RTX 4070 GPU, 12 GB GDDR6X-geheugen en 5888 CUDA-cores, biedt deze kaart uitstekende prestaties en ondersteuning voor geavanceerde grafische technologieën zoals DLSS 3. De hoge GPU-snelheden tot 2550 MHz zorgen voor soepele en gedetailleerde beeldweergave, waardoor gebruikers kunnen genieten van een immersieve gaming-ervaring of productieve creatieve workflows.", "https://www.megekko.nl/productimg/1104777/mini/1_ASUS-GeForce-RTX-4070-DUAL-RTX-4070-O12G-EVO-Videokaart.jpg");
