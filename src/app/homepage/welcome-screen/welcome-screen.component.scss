@@ -25,3 +25,19 @@
   margin-right: 24.65vw;
   opacity: 50%;
 }
+
+#bekijk-assortiment {
+  padding: 1rem;
+  border-style: solid;
+  border-radius: 2rem;
+  margin-top: 30vh;
+  position: absolute;
+  margin-right: 23vw;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+#bekijk-assortiment:hover{
+  background-color: #8cd50a;
+  color: white;
+}

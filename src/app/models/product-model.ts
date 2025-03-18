@@ -1,18 +1,23 @@
+export interface Categorie {
+  categoryId: number;
+  categoryName: string;
+  products?: Product[];
+}
+
 export interface Brand {
-  merk_id: number;
-  merk_naam: string;
-  img_location: string | null;
+  merkId: number;
+  merkNaam: string;
+  imgLocation: string;
+  products?: Product[];
 }
 
 export interface Product {
-  product_id: number;
-  product_naam: string;
+  productId: number;
+  productNaam: string;
   hoeveelheid: number;
   brand: Brand;
-  graphics_engine: string;
-  videogeheugen: string;
-  prijscategorie_id: number;
+  categorie: Categorie;
   prijs: number;
-  img_product: string;
+  imgProduct: string;
   beschrijving: string;
 }
