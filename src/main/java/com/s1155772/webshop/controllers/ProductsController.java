@@ -2,10 +2,7 @@ package com.s1155772.webshop.controllers;
 
 
 import com.s1155772.webshop.models.Product;
-import org.springframework.web.bind.annotation.CrossOrigin;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
@@ -23,6 +20,11 @@ public class ProductsController {
     @GetMapping
     public List<Product> getAllproducts(){
         return this.ProductsDAO.getAllProducts();
+    }
+
+    @GetMapping("/category/{categoryName}")
+    public List<Product> getProductsByCategory(@PathVariable String categoryName){
+        return this.ProductsDAO.getProductsByCategory(categoryName);
     }
 
 
