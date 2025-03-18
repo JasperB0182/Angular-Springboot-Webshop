@@ -1,4 +1,4 @@
-import {Component, Input} from '@angular/core';
+import {Component, Input, numberAttribute} from '@angular/core';
 
 @Component({
   selector: 'app-product-overview-card',
@@ -9,5 +9,7 @@ import {Component, Input} from '@angular/core';
 export class ProductOverviewCardComponent {
   @Input() productnaam : string = '';
   @Input() productimg : string = '';
+  @Input() productbrandimg : string = '';
+  @Input({transform: numberAttribute}) productprijs : number = 0;
 
 }

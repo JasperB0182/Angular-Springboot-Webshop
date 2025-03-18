@@ -48,7 +48,6 @@ export class ProductOverviewComponent {
     const subscription = this.httpClient.get<{Product : Product}>(this.APIlink).subscribe({
       next: (resData) => {
         this.Products = resData;
-        console.log(this.Products)
       }
     });
 
