@@ -35,20 +35,14 @@ export class ProductOverviewComponent {
       this.test = params['id']
     });
 
-    if (this.test == "alles"){
-      this.APIlink = "http://localhost:8080/api/products";
-    }
-
-    if (this.test == "videokaarten"){
+    if (this.test == "videokaarten") {
       this.APIlink = "http://localhost:8080/api/products/category/Videokaarten";
-    }
-
-    if (this.test == "processoren"){
+    } else if (this.test == "processoren") {
       this.APIlink = "http://localhost:8080/api/products/category/Processoren";
-    }
-
-    if (this.test == "moederborden"){
+    } else if (this.test == "moederborden") {
       this.APIlink = "http://localhost:8080/api/products/category/Moederborden";
+    } else {
+      this.APIlink = "http://localhost:8080/api/products";
     }
 
     const subscription = this.httpClient.get<{Product : Product}>(this.APIlink).subscribe({
