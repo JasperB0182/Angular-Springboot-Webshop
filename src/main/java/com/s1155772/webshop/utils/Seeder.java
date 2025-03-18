@@ -38,7 +38,7 @@ public class Seeder {
 
 
 
-        Categorie test1 = new Categorie("test1");
+        Categorie test1 = new Categorie("");
         Categorie test2 = new Categorie("test2");
         this.categoryRepository.save(test1);
         this.categoryRepository.save(test2);
