@@ -1,8 +1,9 @@
 <header>
+  <img src="../assets/megekko-logo.png" height="90" width="90" class="logo-image" alt="Foto van logo" [routerLink]="['/']">
   <li class="register/login">
     <a href="http://www.google.nl">Register</a>
     <a>Login</a>
-    <a [routerLink]="['/products']">Categorieën</a>
+
   </li>
   <form class="search-bar" action="https://www.google.nl/">
     <input type="text" placeholder="Zoek naar een artikel">
@@ -11,6 +12,9 @@
   <li class="admin-panel-list">
     <a>Admin paneel</a>
   </li>
+  <li class="register/login">
+    <a [routerLink]="['/products']">Categorieën</a>
+  </li>
   <img src="../assets/shopping-cart.jpg" height="50" width="50" class="shopping-cart-image" alt="Shopping cart icon">
-  <img src="../assets/megekko-logo.png" height="90" width="90" class="logo-image" alt="Foto van logo" [routerLink]="['/']">
+
 </header>
