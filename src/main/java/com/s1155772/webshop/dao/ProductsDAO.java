@@ -5,6 +5,7 @@ import com.s1155772.webshop.models.Product;
 import org.springframework.stereotype.Component;
 
 import java.util.List;
+import java.util.Optional;
 
 @Component
 public class ProductsDAO {
@@ -26,5 +27,10 @@ public class ProductsDAO {
     public List<Product> getProductsByCategory(String categoryName) {
         Categorie categorie = this.categoryRepository.findBycategoryName(categoryName);
         return this.productsRepository.findByCategorie(categorie);
+    }
+
+
+    public Optional<Product> getProductById(Long productId) {
+        return this.productsRepository.findById(productId);
     }
 }
