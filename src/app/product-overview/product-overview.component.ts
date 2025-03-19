@@ -1,4 +1,4 @@
-import {Component, DestroyRef, inject, Input} from '@angular/core';
+import {Component, DestroyRef, inject, Input, OnInit} from '@angular/core';
 import {HeaderComponent} from '../global/header/header.component';
 import {FooterComponent} from '../global/footer/footer.component';
 import {ProductOverviewHeadComponent} from './product-overview-head/product-overview-head.component';
@@ -20,7 +20,7 @@ import {ActivatedRoute} from '@angular/router';
   templateUrl: './product-overview.component.html',
   styleUrl: './product-overview.component.scss'
 })
-export class ProductOverviewComponent {
+export class ProductOverviewComponent implements OnInit{
   private httpClient = inject(HttpClient)
   private destroyRef = inject(DestroyRef)
   Products: any;

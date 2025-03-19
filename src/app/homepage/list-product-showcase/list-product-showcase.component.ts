@@ -1,4 +1,4 @@
-import {Component, DestroyRef, inject} from '@angular/core';
+import {Component, DestroyRef, inject, OnInit} from '@angular/core';
 import {ProductShowcaseComponent} from "../product-showcase/product-showcase.component";
 import {HttpClient} from '@angular/common/http';
 import {Product} from '../../models/product-model';
@@ -11,7 +11,7 @@ import {Product} from '../../models/product-model';
   templateUrl: './list-product-showcase.component.html',
   styleUrl: './list-product-showcase.component.scss',
 })
-export class ListProductShowcaseComponent{
+export class ListProductShowcaseComponent implements OnInit{
   private httpClient = inject(HttpClient)
   private destroyRef = inject(DestroyRef)
   ShowcaseProducts: any;
