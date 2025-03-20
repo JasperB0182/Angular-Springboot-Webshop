@@ -6,6 +6,7 @@ import {Product} from '../models/product-model';
 import {HeaderComponent} from '../global/header/header.component';
 import {FooterComponent} from '../global/footer/footer.component';
 import {Location} from '@angular/common';
+import {ShoppingcartService} from '../services/shoppingcart.service';
 
 @Component({
   selector: 'app-details-productpage',
@@ -24,6 +25,7 @@ export class DetailsProductpageComponent implements OnInit{
   constructor(private route: ActivatedRoute, private location: Location) { }
   webId : any;
   apiLink!: string;
+  protected shoppingcart = inject(ShoppingcartService);
 
 
   backClicked() {

@@ -1,0 +1,12 @@
+<section id="shopping-cart-section-container">
+  <section id="shopping-cart-section-products">
+    @if (Products){
+      @for (product of Products ; track product){
+    <app-shopping-cart-product productImg="{{product.imgProduct}}" productNaam="{{product.productNaam}}" [productPrijs] = "product.prijs"/>
+      }
+    }
+  </section>
+  <section id="shopping-cart-section-price">
+    <p>Hi!</p>
+  </section>
+</section>

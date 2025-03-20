@@ -1,0 +1,25 @@
+#shopping-cart-section-container {
+  padding-top: 15vh;
+  height: 85vh;
+  display: flex;
+  justify-content: space-evenly;
+}
+
+#shopping-cart-section-price {
+  margin-top: 7vh;
+  width: 20%;
+  border-style: solid;
+  height: auto;
+  justify-items: center;
+  align-self: flex-start;
+
+}
+
+#shopping-cart-section-products {
+  margin-top: 7vh;
+  width: 30%;
+  border-style: solid;
+  height: auto;
+  align-self: flex-start;
+
+}
