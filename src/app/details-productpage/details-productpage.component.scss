@@ -11,7 +11,25 @@
 
 }
 
-button {
+#koop-knop {
+  background-color: #f0f0f0;
+  color: black;
+  padding: 1rem;
+  border-radius: 2rem;
+  font-size: 14px;
+  cursor: pointer;
+  transition: 0.3s;
+  border-style: none;
+  margin-top: 2vh;
+}
+
+#koop-knop:hover {
+  background-color: #8cd50a;
+  box-shadow: 0 0 0 5px #c1e390;
+  color: white;
+}
+
+#back-button {
   display: block;
   border-top-right-radius: 2rem;
   border-bottom-right-radius: 2rem;

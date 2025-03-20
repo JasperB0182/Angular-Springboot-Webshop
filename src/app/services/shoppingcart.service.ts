@@ -1,6 +1,8 @@
 import {Injectable, OnInit} from '@angular/core';
 import {dummy_products} from '../shopping-cart/dummy_products';
 import {Product} from '../models/product-model';
+import Swal from 'sweetalert2'
+
 
 @Injectable({
   providedIn: 'root'
@@ -16,12 +18,17 @@ export class ShoppingcartService{
     }
   }
 
-  public ProductsCart! : Product[];
+  public ProductsCart : Product[];
 
 
   public AddToCart(Product : Product){
     this.ProductsCart.push(Product)
     localStorage.setItem('productsCart', JSON.stringify(this.ProductsCart));
+    Swal.fire({
+      title: "Succes!",
+      text: "Items zijn toegevoegd aan de winkelwagen.",
+      icon: "success"
+    })
   }
 
   public EmptyCart(){
