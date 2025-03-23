@@ -1,5 +1,4 @@
-import {Injectable, OnInit} from '@angular/core';
-import {dummy_products} from '../shopping-cart/dummy_products';
+import {Injectable} from '@angular/core';
 import {Product} from '../models/product-model';
 import Swal from 'sweetalert2'
 
@@ -8,6 +7,7 @@ import Swal from 'sweetalert2'
   providedIn: 'root'
 })
 export class ShoppingcartService{
+  totalCost : number = 0;
 
   constructor() {
     const savedCart = localStorage.getItem('productsCart');
@@ -18,7 +18,18 @@ export class ShoppingcartService{
     }
   }
 
+
+
   public ProductsCart : Product[];
+
+
+  public CalculateTotalCost() {
+    this.totalCost = 0;
+    for(let i=0; i<this.ProductsCart.length; i++){
+      console.log(this.ProductsCart[i].prijs);
+      this.totalCost += this.ProductsCart[i].prijs;
+    }
+  }
 
 
   public AddToCart(Product : Product){
