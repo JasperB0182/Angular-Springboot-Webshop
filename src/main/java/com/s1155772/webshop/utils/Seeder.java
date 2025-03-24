@@ -4,6 +4,7 @@ import com.s1155772.webshop.dao.*;
 import com.s1155772.webshop.models.*;
 import org.springframework.context.event.ContextRefreshedEvent;
 import org.springframework.context.event.EventListener;
+import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.stereotype.Component;
 
 @Component
@@ -18,24 +19,23 @@ public class Seeder {
 
     private GebruikerRepository gebruikerRepository;
 
-    public Seeder(BrandRepository brandRepository, CategoryRepository categoryRepository, ProductsRepository productsRepository, GebruikerRolRepository gebruikerRolRepository, GebruikerRepository gebruikerRepository) {
+    private UserRepository userRepository;
+
+    public Seeder(ProductsRepository productsRepository, BrandRepository brandRepository, CategoryRepository categoryRepository, GebruikerRolRepository gebruikerRolRepository, GebruikerRepository gebruikerRepository, UserRepository userRepository) {
+        this.productsRepository = productsRepository;
         this.brandRepository = brandRepository;
         this.categoryRepository = categoryRepository;
-        this.productsRepository = productsRepository;
         this.gebruikerRolRepository = gebruikerRolRepository;
         this.gebruikerRepository = gebruikerRepository;
+        this.userRepository = userRepository;
     }
 
     @EventListener
     public void Seed(ContextRefreshedEvent event){
-        GebruikerRol gebruiker = new GebruikerRol("Gebruiker");
-        GebruikerRol admin = new GebruikerRol("Admin");
-        this.gebruikerRolRepository.save(gebruiker);
-        this.gebruikerRolRepository.save(admin);
-
-        Gebruiker eersteGebruiker = new Gebruiker(admin, "Jasper", "Batenburg", "BasicAhhWachtwoord", "Verweggistan", "kokosnoot@gmail.com");
-        this.gebruikerRepository.save(eersteGebruiker);
-
+        CustomUser customUser = new CustomUser();
+        customUser.setEmail("test@mail.com");
+        customUser.setPassword(new BCryptPasswordEncoder().encode("Test123!"));
+        userRepository.save(customUser);
 
 
         Categorie videokaarten = new Categorie("Videokaarten");
