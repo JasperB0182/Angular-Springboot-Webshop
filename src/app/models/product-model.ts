@@ -20,4 +20,5 @@ export interface Product {
   prijs: number;
   imgProduct: string;
   beschrijving: string;
+  aantalInWinkelwagen: number;
 }

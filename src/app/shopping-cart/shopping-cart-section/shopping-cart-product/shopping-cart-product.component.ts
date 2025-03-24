@@ -10,5 +10,7 @@ export class ShoppingCartProductComponent {
   @Input() productNaam? : string;
   @Input() productImg? : string;
   @Input() productPrijs? : number;
+  @Input() productWinkelwagen! : number;
+
 
 }

@@ -2,7 +2,7 @@
   <section id="shopping-cart-section-products">
     @if (Products){
       @for (product of Products ; track product){
-    <app-shopping-cart-product productImg="{{product.imgProduct}}" productNaam="{{product.productNaam}}" [productPrijs] = "product.prijs"/>
+    <app-shopping-cart-product productImg="{{product.imgProduct}}" productNaam="{{product.productNaam}}" [productPrijs] = "product.prijs" [productWinkelwagen]="product.aantalInWinkelwagen"/>
       }
     }
   </section>
