@@ -6,6 +6,7 @@ import java.util.Date;
 import java.util.List;
 
 //Problemen? Check de constructor!!!
+//TODO: boolean toevoegen of de bestelling afgehandeld is
 
 @Entity
 public class Bestelling {

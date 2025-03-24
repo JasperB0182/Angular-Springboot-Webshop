@@ -35,6 +35,8 @@ public class Product {
 
     private String imgProduct;
 
+    private int aantalInWinkelwagen = 1;
+
     @Column(length = 1000)
     private String beschrijving;
 
@@ -48,15 +50,24 @@ public class Product {
         this.imgProduct = imgProduct;
     }
 
-    public Product(int hoeveelheid, String productNaam, Brand brand, Categorie categorie, List<BestellingProduct> bestellingProducten, float prijs, String imgProduct, String beschrijving) {
-        this.hoeveelheid = hoeveelheid;
+    public Product(String productNaam, int hoeveelheid, Brand brand, Categorie categorie, List<BestellingProduct> bestellingProducten, float prijs, String imgProduct, int aantalInWinkelwagen, String beschrijving) {
         this.productNaam = productNaam;
+        this.hoeveelheid = hoeveelheid;
         this.brand = brand;
         this.categorie = categorie;
         this.bestellingProducten = bestellingProducten;
         this.prijs = prijs;
         this.imgProduct = imgProduct;
+        this.aantalInWinkelwagen = aantalInWinkelwagen;
         this.beschrijving = beschrijving;
+    }
+
+    public int getAantalInWinkelwagen() {
+        return aantalInWinkelwagen;
+    }
+
+    public void setAantalInWinkelwagen(int aantalInWinkelwagen) {
+        this.aantalInWinkelwagen = aantalInWinkelwagen;
     }
 
     public String getImgProduct() {
