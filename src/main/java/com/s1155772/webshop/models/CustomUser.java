@@ -4,6 +4,8 @@ import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.Id;
 
+// Het is misschien maar handiger als ik alle gegevens stuur van de ingelogde gebruiker.
+
 @Entity(name = "custom_user")
 public class CustomUser {
 
@@ -15,13 +17,23 @@ public class CustomUser {
 
     private String password;
 
+    private String voornaam;
 
     public CustomUser() {
     }
 
-    public CustomUser(String email, String encodedPassword) {
+    public CustomUser(String email, String password, String voornaam) {
         this.email = email;
-        this.password = encodedPassword;
+        this.password = password;
+        this.voornaam = voornaam;
+    }
+
+    public String getVoornaam() {
+        return voornaam;
+    }
+
+    public void setVoornaam(String voornaam) {
+        this.voornaam = voornaam;
     }
 
     public String getEmail() {
