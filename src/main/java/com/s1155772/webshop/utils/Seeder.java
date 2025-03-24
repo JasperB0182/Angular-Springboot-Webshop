@@ -33,8 +33,8 @@ public class Seeder {
     @EventListener
     public void Seed(ContextRefreshedEvent event){
         CustomUser customUser = new CustomUser();
-        customUser.setEmail("test@mail.com");
-        customUser.setPassword(new BCryptPasswordEncoder().encode("Test123!"));
+        customUser.setEmail("user@mail.com");
+        customUser.setPassword(new BCryptPasswordEncoder().encode("hallo"));
         userRepository.save(customUser);
 
 
