@@ -35,6 +35,8 @@ export class ProductOverviewComponent implements OnInit{
       this.test = params['id']
     });
 
+
+    // 24-3-2025, ik besef me nu pas dat ik ook gewoon de category had kunnen pakken en daar de producten uit..... Jammer dit
     if (this.test == "videokaarten") {
       this.APIlink = "http://localhost:8080/api/products/category/Videokaarten";
     } else if (this.test == "processoren") {
