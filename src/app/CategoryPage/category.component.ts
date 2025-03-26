@@ -6,7 +6,6 @@ import {CategorySectionComponent} from './category-section/category-section.comp
 @Component({
   selector: 'app-CategoryPage',
   imports: [
-    HeaderComponent,
     FooterComponent,
     CategorySectionComponent
   ],

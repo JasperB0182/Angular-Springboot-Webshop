@@ -1,18 +1,16 @@
 import {Component, DestroyRef, inject, Input, OnInit} from '@angular/core';
-import {HeaderComponent} from '../global/header/header.component';
 import {FooterComponent} from '../global/footer/footer.component';
 import {ProductOverviewHeadComponent} from './product-overview-head/product-overview-head.component';
 import {ProductOverviewCardComponent} from './product-overview-card/product-overview-card.component';
 import {Product} from '../models/product-model';
 import {HttpClient} from '@angular/common/http';
-import {ProductShowcaseComponent} from '../homepage/product-showcase/product-showcase.component';
 import {Subscription} from 'rxjs';
 import {ActivatedRoute} from '@angular/router';
+import {LoginService} from '../services/login.service';
 
 @Component({
   selector: 'app-product-overview',
   imports: [
-    HeaderComponent,
     FooterComponent,
     ProductOverviewHeadComponent,
     ProductOverviewCardComponent,
@@ -28,6 +26,7 @@ export class ProductOverviewComponent implements OnInit{
   constructor(private route: ActivatedRoute) { }
   public test: string = '';
   public APIlink: string = '';
+  protected LoginService = inject(LoginService)
 
   ngOnInit() {
 
@@ -47,9 +46,16 @@ export class ProductOverviewComponent implements OnInit{
       this.APIlink = "http://localhost:8080/api/products";
     }
 
+
+    //TODO: maak de error handling een funcite PLS
     const subscription = this.httpClient.get<{Product : Product}>(this.APIlink).subscribe({
       next: (resData) => {
         this.Products = resData;
+      },
+      error: (err : 401) => {
+        this.LoginService.resetToken();
+        this.LoginService.loggedIn = false;
+        window.location.reload()
       }
     });
 

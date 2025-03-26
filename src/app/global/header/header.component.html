@@ -1,8 +1,15 @@
 <nav>
   <img src="../assets/megekko-logo.png" height="90" width="90" class="logo-image" alt="Foto van logo" [routerLink]="['/']">
   <li class="register/login">
-    <a href="http://www.google.nl">Register</a>
-    <a>Login</a>
+
+    @if (LoginService.isLoggedIn()){
+      <a id="Account-button" [routerLink]="['/user']">Account</a>
+    } @else {
+      <a id="Register-button" [routerLink]="['/register']">Register</a>
+      <a id="Login-button" [routerLink]="['/login']">Login</a>
+    }
+
+
 
   </li>
   <form class="search-bar" action="https://www.google.nl/">

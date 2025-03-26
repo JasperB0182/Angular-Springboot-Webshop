@@ -1,6 +1,7 @@
-import { Component } from '@angular/core';
+import {Component, inject} from '@angular/core';
 import {NgOptimizedImage} from '@angular/common';
 import {RouterLink} from '@angular/router';
+import {LoginService} from '../../services/login.service';
 
 
 @Component({
@@ -12,5 +13,8 @@ import {RouterLink} from '@angular/router';
   styleUrl: './header.component.scss'
 })
 export class HeaderComponent {
+
+  protected LoginService = inject(LoginService);
+
 
 }
