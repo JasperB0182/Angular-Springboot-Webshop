@@ -10,6 +10,10 @@ import {HttpClient} from '@angular/common/http';
 export class ShoppingcartService{
   totalCost : number = 0;
   protected httpClient = inject(HttpClient);
+  protected address = "Fortunalaan 14"
+  protected fullname = "Jasper Batenburg"
+  protected city = "Waddinxveen"
+  protected postcode = "2741SW"
 
   constructor() {
     const savedCart = localStorage.getItem('productsCart');
@@ -20,11 +24,23 @@ export class ShoppingcartService{
     }
   }
 
+
+
   public checkout() {
-    console.log(this.ProductsCart)
+    console.log(this.ProductsCart);
+
+
+    const bestelData = {
+      products: this.ProductsCart,
+      address: this.address,
+      fullname: this.fullname,
+      city: this.city,
+      postcode: this.postcode
+    };
+
     this.httpClient.post(
-      'http://localhost:8080/api/bestelling/plaats', // <-- Is this the correct URL? (See Point 3)
-      this.ProductsCart
+      'http://localhost:8080/api/bestelling/plaats',
+      bestelData
     ).subscribe(
       response => {
         console.log("Checkout successful!", response);
@@ -34,6 +50,7 @@ export class ShoppingcartService{
       }
     );
   }
+
 
 
 
