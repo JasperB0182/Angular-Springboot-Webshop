@@ -118,9 +118,7 @@ public class Seeder {
 
         bestellingRepository.save(bestelling1);
 
-        bestellingProductRepository.save(bestellingProduct1);
-        bestellingProductRepository.save(bestellingProduct2);
-        bestellingProductRepository.save(bestellingProduct3);
+
 
 
         Bestelling bestelling2 = new Bestelling(LocalDate.now(), customUser);
@@ -139,9 +137,7 @@ public class Seeder {
 
         bestellingRepository.save(bestelling2);
 
-        bestellingProductRepository.save(bestellingProduct4);
-        bestellingProductRepository.save(bestellingProduct5);
-        bestellingProductRepository.save(bestellingProduct6);
+
 
 
 

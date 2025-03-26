@@ -33,4 +33,9 @@ public class ProductsDAO {
     public Optional<Product> getProductById(Long productId) {
         return this.productsRepository.findById(productId);
     }
+
+    public Product findByProductId(Long productId) {
+        return this.productsRepository.findById(productId)
+                .orElseThrow(() -> new RuntimeException("Product met dit ID niet gevonden: " + productId));
+    }
 }
