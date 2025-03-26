@@ -1,4 +1,11 @@
 #user-page {
   padding-top: 15vh;
   height: 85vh;
+  display: flex;
+  flex-direction: column;
+}
+
+.bestelling-section {
+  background-color: #c1e390;
+  margin-bottom: 4vh;
 }

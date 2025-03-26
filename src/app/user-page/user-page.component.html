@@ -1,5 +1,13 @@
 <section id="user-page">
   <button (click)="LoginService.logOut()">Logout</button>
-  <p>user-page works!</p>
   <p>Hallo {{userDetail?.voornaam}}</p>
+
+  @for (bestelling of userDetail?.bestellingen ?? []; track bestelling.bestellingId) {
+    <section class="bestelling-section">
+    <a>Bestelnummer #{{bestelling.bestellingId}}</a>
+    @for (bestellingproducten of bestelling.bestellingProducten ; track bestellingproducten.productBestellingNummer){
+      <p>{{bestellingproducten.product.productNaam}} ({{bestellingproducten.hoeveelheid_besteld}}x)</p>
+      }
+    </section>
+    }
 </section>

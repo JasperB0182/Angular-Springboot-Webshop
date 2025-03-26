@@ -1,13 +1,15 @@
-import {Injectable} from '@angular/core';
+import {inject, Injectable} from '@angular/core';
 import {Product} from '../models/product-model';
 import Swal from 'sweetalert2'
+import {HttpClient} from '@angular/common/http';
 
 
 @Injectable({
   providedIn: 'root'
 })
 export class ShoppingcartService{
-  totalCost : number = 0;
+  protected totalCost : number = 0;
+  protected httpClient = inject(HttpClient);
 
   constructor() {
     const savedCart = localStorage.getItem('productsCart');
@@ -18,9 +20,28 @@ export class ShoppingcartService{
     }
   }
 
+  public checkout() {
+    console.log(this.ProductsCart)
+    this.httpClient.post(
+      'http://localhost:8080/api/bestelling/plaats', // <-- Is this the correct URL? (See Point 3)
+      this.ProductsCart
+    ).subscribe(
+      response => {
+        console.log("Checkout successful!", response);
+      },
+      error => {
+        console.error("Error during checkout:", error);
+      }
+    );
+  }
+
 
 
   public ProductsCart : Product[];
+
+  public showcartinConsoleLog() {
+    console.log(this.ProductsCart)
+}
 
 
   public CalculateTotalCost() {

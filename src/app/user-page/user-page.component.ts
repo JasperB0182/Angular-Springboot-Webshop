@@ -18,7 +18,7 @@ export class UserPageComponent implements OnInit{
 
   protected httpClient = inject(HttpClient);
 
-  protected userDetail? : UserDetails;
+  public userDetail? : UserDetails;
 
   ngOnInit() {
     if (!this.LoginService.isLoggedIn()){
