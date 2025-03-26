@@ -123,6 +123,27 @@ public class Seeder {
         bestellingProductRepository.save(bestellingProduct3);
 
 
+        Bestelling bestelling2 = new Bestelling(LocalDate.now(), customUser);
+
+        BestellingProduct bestellingProduct4 = new BestellingProduct(9, bestelling2, product4);
+        BestellingProduct bestellingProduct5 = new BestellingProduct(2, bestelling2, product12);
+        BestellingProduct bestellingProduct6 = new BestellingProduct(12, bestelling2, product15);
+
+        List<BestellingProduct> bestellingProductList2 = new ArrayList<>();
+        bestellingProductList2.add(bestellingProduct4);
+        bestellingProductList2.add(bestellingProduct5);
+        bestellingProductList2.add(bestellingProduct6);
+
+        bestelling2.setBestellingProducten(bestellingProductList2);
+
+
+        bestellingRepository.save(bestelling2);
+
+        bestellingProductRepository.save(bestellingProduct4);
+        bestellingProductRepository.save(bestellingProduct5);
+        bestellingProductRepository.save(bestellingProduct6);
+
+
 
 
 
