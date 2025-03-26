@@ -8,7 +8,7 @@ import {HttpClient} from '@angular/common/http';
   providedIn: 'root'
 })
 export class ShoppingcartService{
-  protected totalCost : number = 0;
+  totalCost : number = 0;
   protected httpClient = inject(HttpClient);
 
   constructor() {
