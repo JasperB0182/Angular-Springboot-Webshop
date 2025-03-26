@@ -1,5 +1,6 @@
 package com.s1155772.webshop.models;
 
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import jakarta.persistence.*;
 
 import java.time.LocalDate;
@@ -22,6 +23,7 @@ public class Bestelling {
     private CustomUser gebruiker;
 
     @OneToMany(mappedBy = "bestellingId", cascade = CascadeType.ALL)
+    @JsonIgnoreProperties("bestellingId")
     private List<BestellingProduct> bestellingProducten;
 
     public Bestelling(LocalDate orderDatum, CustomUser gebruiker) {

@@ -1,5 +1,6 @@
 package com.s1155772.webshop.models;
 
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.Id;
@@ -24,6 +25,7 @@ public class CustomUser {
 
     // Gewoon niet in de constructor zetten dan!!
     @OneToMany(mappedBy = "gebruiker")
+    @JsonIgnoreProperties("gebruiker")
     private List<Bestelling> bestellingen;
 
     public CustomUser() {
@@ -33,6 +35,14 @@ public class CustomUser {
         this.email = email;
         this.password = password;
         this.voornaam = voornaam;
+    }
+
+    public List<Bestelling> getBestellingen() {
+        return bestellingen;
+    }
+
+    public void setBestellingen(List<Bestelling> bestellingen) {
+        this.bestellingen = bestellingen;
     }
 
     public String getVoornaam() {
