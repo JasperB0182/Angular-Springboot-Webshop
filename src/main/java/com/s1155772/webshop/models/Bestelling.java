@@ -31,6 +31,14 @@ public class Bestelling {
     public Bestelling(){
     }
 
+    public List<BestellingProduct> getBestellingProducten() {
+        return bestellingProducten;
+    }
+
+    public void setBestellingProducten(List<BestellingProduct> bestellingProducten) {
+        this.bestellingProducten = bestellingProducten;
+    }
+
     public int getBestellingId() {
         return bestellingId;
     }

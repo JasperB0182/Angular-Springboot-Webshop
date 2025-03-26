@@ -23,10 +23,14 @@ public class Gebruiker {
 
     private String adres;
 
+
+
     @ManyToOne
     @JoinColumn(name = "gebruikerRol", nullable = false)
     private GebruikerRol gebruikerRol;
 
+    
+    // Gewoon niet in de constructor zetten dan!!
     @OneToMany(mappedBy = "gebruiker")
     private List<Bestelling> bestellingen;
 

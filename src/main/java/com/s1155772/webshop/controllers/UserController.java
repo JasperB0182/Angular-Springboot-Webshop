@@ -31,6 +31,7 @@ public class UserController {
         System.out.println(currentUser);
 
         CustomUser customUser = this.userDAO.findByEmail(currentUser);
+        customUser.setPassword("-");
 
         return ResponseEntity.ok(customUser);
     }

@@ -93,6 +93,12 @@ public class Seeder {
         this.productsRepository.save(product9);
         this.productsRepository.save(product11);
 
+
+
+
+        Bestelling bestelling1 = new Bestelling();
+
+
     }
 
 }
