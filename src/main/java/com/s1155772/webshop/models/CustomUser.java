@@ -3,6 +3,9 @@ package com.s1155772.webshop.models;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.Id;
+import jakarta.persistence.OneToMany;
+
+import java.util.List;
 
 // Het is misschien maar handiger als ik alle gegevens stuur van de ingelogde gebruiker.
 
@@ -18,6 +21,10 @@ public class CustomUser {
     private String password;
 
     private String voornaam;
+
+    // Gewoon niet in de constructor zetten dan!!
+    @OneToMany(mappedBy = "gebruiker")
+    private List<Bestelling> bestellingen;
 
     public CustomUser() {
     }

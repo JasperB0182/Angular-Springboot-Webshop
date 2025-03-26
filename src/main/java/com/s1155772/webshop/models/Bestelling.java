@@ -2,6 +2,7 @@ package com.s1155772.webshop.models;
 
 import jakarta.persistence.*;
 
+import java.time.LocalDate;
 import java.util.Date;
 import java.util.List;
 
@@ -14,16 +15,16 @@ public class Bestelling {
     @GeneratedValue
     private int bestellingId;
 
-    private Date orderDatum;
+    private LocalDate orderDatum;
 
     @ManyToOne
     @JoinColumn(name = "gebruikerId")
-    private Gebruiker gebruiker;
+    private CustomUser gebruiker;
 
-    @OneToMany(mappedBy = "bestellingId")
+    @OneToMany(mappedBy = "bestellingId", cascade = CascadeType.ALL)
     private List<BestellingProduct> bestellingProducten;
 
-    public Bestelling(Date orderDatum, Gebruiker gebruiker) {
+    public Bestelling(LocalDate orderDatum, CustomUser gebruiker) {
         this.orderDatum = orderDatum;
         this.gebruiker = gebruiker;
     }
@@ -47,19 +48,19 @@ public class Bestelling {
         this.bestellingId = bestellingId;
     }
 
-    public Date getOrderDatum() {
+    public LocalDate getOrderDatum() {
         return orderDatum;
     }
 
-    public void setOrderDatum(Date orderDatum) {
+    public void setOrderDatum(LocalDate orderDatum) {
         this.orderDatum = orderDatum;
     }
 
-    public Gebruiker getGebruiker() {
+    public CustomUser getGebruiker() {
         return gebruiker;
     }
 
-    public void setGebruiker(Gebruiker gebruiker) {
+    public void setGebruiker(CustomUser gebruiker) {
         this.gebruiker = gebruiker;
     }
 }

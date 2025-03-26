@@ -19,4 +19,13 @@ public class BestellingProduct {
     @ManyToOne
     @JoinColumn(name = "product_id", nullable = false)
     private Product product;
+
+    public BestellingProduct(int hoeveelheid_besteld, Bestelling bestellingId, Product product) {
+        this.hoeveelheid_besteld = hoeveelheid_besteld;
+        this.bestellingId = bestellingId;
+        this.product = product;
+    }
+
+    public BestellingProduct() {
+    }
 }

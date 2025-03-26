@@ -7,6 +7,10 @@ import org.springframework.context.event.EventListener;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.stereotype.Component;
 
+import java.time.LocalDate;
+import java.util.ArrayList;
+import java.util.List;
+
 @Component
 public class Seeder {
     private ProductsRepository productsRepository;
@@ -15,18 +19,20 @@ public class Seeder {
 
     private CategoryRepository categoryRepository;
 
-    private GebruikerRolRepository gebruikerRolRepository;
+    private BestellingRepository bestellingRepository;
 
-    private GebruikerRepository gebruikerRepository;
+    private BestellingProductRepository bestellingProductRepository;
+
+
 
     private UserRepository userRepository;
 
-    public Seeder(ProductsRepository productsRepository, BrandRepository brandRepository, CategoryRepository categoryRepository, GebruikerRolRepository gebruikerRolRepository, GebruikerRepository gebruikerRepository, UserRepository userRepository) {
+    public Seeder(ProductsRepository productsRepository, BrandRepository brandRepository, CategoryRepository categoryRepository, BestellingRepository bestellingRepository, BestellingProductRepository bestellingProductRepository, UserRepository userRepository) {
         this.productsRepository = productsRepository;
         this.brandRepository = brandRepository;
         this.categoryRepository = categoryRepository;
-        this.gebruikerRolRepository = gebruikerRolRepository;
-        this.gebruikerRepository = gebruikerRepository;
+        this.bestellingRepository = bestellingRepository;
+        this.bestellingProductRepository = bestellingProductRepository;
         this.userRepository = userRepository;
     }
 
@@ -96,7 +102,28 @@ public class Seeder {
 
 
 
-        Bestelling bestelling1 = new Bestelling();
+        Bestelling bestelling1 = new Bestelling(LocalDate.now(), customUser);
+
+        BestellingProduct bestellingProduct1 = new BestellingProduct(2, bestelling1, product14);
+        BestellingProduct bestellingProduct2 = new BestellingProduct(4, bestelling1, product9);
+        BestellingProduct bestellingProduct3 = new BestellingProduct(15, bestelling1, product6);
+
+        List<BestellingProduct> bestellingProductList = new ArrayList<>();
+        bestellingProductList.add(bestellingProduct1);
+        bestellingProductList.add(bestellingProduct2);
+        bestellingProductList.add(bestellingProduct3);
+
+        bestelling1.setBestellingProducten(bestellingProductList);
+
+
+        bestellingRepository.save(bestelling1);
+
+        bestellingProductRepository.save(bestellingProduct1);
+        bestellingProductRepository.save(bestellingProduct2);
+        bestellingProductRepository.save(bestellingProduct3);
+
+
+
 
 
     }
