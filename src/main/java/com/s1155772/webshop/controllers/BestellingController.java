@@ -4,11 +4,9 @@ package com.s1155772.webshop.controllers;
 import com.s1155772.webshop.dao.BestellingDAO;
 import com.s1155772.webshop.dao.ProductsDAO;
 import com.s1155772.webshop.dao.UserDAO;
+import com.s1155772.webshop.dto.BestellingDTO;
 import com.s1155772.webshop.dto.ProductDTO;
-import com.s1155772.webshop.models.Bestelling;
-import com.s1155772.webshop.models.BestellingProduct;
-import com.s1155772.webshop.models.CustomUser;
-import com.s1155772.webshop.models.Product;
+import com.s1155772.webshop.models.*;
 import org.springframework.security.core.Authentication;
 import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.web.bind.annotation.*;
@@ -29,6 +27,9 @@ public class BestellingController {
 
     private ProductsDAO productsDAO;
 
+
+
+
     public BestellingController(BestellingDAO bestellingDAO, ProductsDAO productsDAO, UserDAO userDAO) {
         this.bestellingDAO = bestellingDAO;
         this.productsDAO = productsDAO;
@@ -41,7 +42,23 @@ public class BestellingController {
     }
 
     @PostMapping("/plaats")
-    public void setNewBestelling(@RequestBody List<ProductDTO> productListDTO){
+    public void setNewBestelling(@RequestBody BestellingDTO productListDTO){
+        List<Product> productList = productListDTO.getProducts();
+
+        String address = productListDTO.getAddress();
+
+        String fullName = productListDTO.getFullname();
+
+        String city = productListDTO.getCity();
+
+        System.out.println(city);
+
+        String postcode = productListDTO.getPostcode();
+
+        System.out.println(postcode);
+
+        System.out.println(fullName);
+
         Authentication authentication = SecurityContextHolder.getContext().getAuthentication();
 
         String currentUser = (String) authentication.getPrincipal();
@@ -50,12 +67,16 @@ public class BestellingController {
 
         CustomUser customUser = this.userDAO.findByEmail(currentUser);
 
-        Bestelling bestelling = new Bestelling(LocalDate.now(), customUser);
+        Bestelling bestelling = new Bestelling(LocalDate.now(), customUser, address, fullName, city, postcode, (float) 0);
 
         List<BestellingProduct> bestellingProductList = new ArrayList<>();
 
-        for (ProductDTO product : productListDTO){
-            Long productId = product.getProductId();
+        float totalePrijs = 0;
+
+        for (Product product : productList){
+            float prijs = (product.getPrijs() * product.getAantalInWinkelwagen());
+            totalePrijs += prijs;
+            Long productId = (long) product.getProductId();
             int aantalInWinkelwagen = product.getAantalInWinkelwagen();
             System.out.println(aantalInWinkelwagen);
             Product Product = this.productsDAO.findByProductId(productId);
@@ -63,8 +84,15 @@ public class BestellingController {
             bestellingProductList.add(bestellingProduct);
 
         }
+        bestelling.setTotaleprijs(totalePrijs);
+
         bestelling.setBestellingProducten(bestellingProductList);
 
         this.bestellingDAO.saveToDatabase(bestelling);
+
+
+
+
+
     }
 }

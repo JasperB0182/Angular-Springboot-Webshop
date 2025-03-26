@@ -26,12 +26,67 @@ public class Bestelling {
     @JsonIgnoreProperties("bestellingId")
     private List<BestellingProduct> bestellingProducten;
 
-    public Bestelling(LocalDate orderDatum, CustomUser gebruiker) {
+    private String Address;
+
+    private String fullname;
+
+    private String city;
+
+    private String postcode;
+
+    private float totaleprijs;
+
+    public Bestelling(LocalDate orderDatum, CustomUser gebruiker, String address, String fullname, String city, String postcode, Float totaleprijs) {
         this.orderDatum = orderDatum;
         this.gebruiker = gebruiker;
+        Address = address;
+        this.fullname = fullname;
+        this.city = city;
+        this.postcode = postcode;
+        this.totaleprijs = totaleprijs;
+    }
+
+    public float getTotaleprijs() {
+        return totaleprijs;
+    }
+
+    public void setTotaleprijs(float totaleprijs) {
+        this.totaleprijs = totaleprijs;
+    }
+
+    public String getPostcode() {
+        return postcode;
+    }
+
+    public void setPostcode(String postcode) {
+        this.postcode = postcode;
+    }
+
+    public String getCity() {
+        return city;
+    }
+
+    public void setCity(String city) {
+        this.city = city;
+    }
+
+    public String getFullname() {
+        return fullname;
+    }
+
+    public void setFullname(String fullname) {
+        this.fullname = fullname;
     }
 
     public Bestelling(){
+    }
+
+    public String getAddress() {
+        return Address;
+    }
+
+    public void setAddress(String address) {
+        Address = address;
     }
 
     public List<BestellingProduct> getBestellingProducten() {

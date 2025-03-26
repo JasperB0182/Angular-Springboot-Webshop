@@ -102,7 +102,7 @@ public class Seeder {
 
 
 
-        Bestelling bestelling1 = new Bestelling(LocalDate.now(), customUser);
+        Bestelling bestelling1 = new Bestelling(LocalDate.now(), customUser, "test", "testnaam", "testStad", "postcodebrrrr", (float) 69);
 
         BestellingProduct bestellingProduct1 = new BestellingProduct(2, bestelling1, product14);
         BestellingProduct bestellingProduct2 = new BestellingProduct(4, bestelling1, product9);
@@ -121,7 +121,7 @@ public class Seeder {
 
 
 
-        Bestelling bestelling2 = new Bestelling(LocalDate.now(), customUser);
+        Bestelling bestelling2 = new Bestelling(LocalDate.now(), customUser, "test", "testnaam", "testStad", "postcodebrrr", (float) 1569);
 
         BestellingProduct bestellingProduct4 = new BestellingProduct(9, bestelling2, product4);
         BestellingProduct bestellingProduct5 = new BestellingProduct(2, bestelling2, product12);
