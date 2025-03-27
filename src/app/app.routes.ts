@@ -1,12 +1,13 @@
 import { Routes } from '@angular/router';
 import {HomepageComponent} from './homepage/homepage.component';
-import {CategoryComponent} from './CategoryPage/category.component';
+import {CategoryComponent} from './category-page/category.component';
 import {ProductOverviewComponent} from './product-overview/product-overview.component';
-import {DetailsProductpageComponent} from './details-productpage/details-productpage.component';
+import {DetailsProductpageComponent} from './product-details-page/details-productpage.component';
 import {ShoppingCartComponent} from './shopping-cart/shopping-cart.component';
 import {LoginComponent} from './login/login.component';
 import {UserPageComponent} from './user-page/user-page.component';
 import {RegisterComponent} from './register/register.component';
+import {CheckoutComponent} from './shopping-cart/checkout/checkout.component';
 
 export const routes: Routes = [
   {
@@ -40,6 +41,10 @@ export const routes: Routes = [
   {
     path: "user",
     component: UserPageComponent
+  },
+  {
+    path: "checkout",
+    component: CheckoutComponent
   }
 
 ];

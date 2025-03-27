@@ -76,3 +76,27 @@ img {
 #product-details-voorraad {
   margin-top: 4vh;
 }
+
+@media only screen and (max-width: 860px) {
+  #product-details{
+    flex-direction: column;
+    text-align: center;
+  }
+
+  img{
+    align-self: center;
+  }
+
+  #product-details-met-specificaties{
+    margin-top: 100vh;
+  }
+}
+
+@media only screen and (max-width: 344px) {
+  #product-details-met-specificaties{
+    h1{
+      font-size: 7vw;
+    }
+  }
+
+}

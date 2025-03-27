@@ -9,7 +9,7 @@ import {ShoppingcartService} from '../services/shoppingcart.service';
 import {LoginService} from '../services/login.service';
 
 @Component({
-  selector: 'app-details-productpage',
+  selector: 'app-product-details-page',
   imports: [
     FooterComponent
   ],

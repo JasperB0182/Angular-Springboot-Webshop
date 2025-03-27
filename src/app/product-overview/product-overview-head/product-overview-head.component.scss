@@ -2,7 +2,7 @@
   padding-top: 15vh;
   height: 30vh;
 
-  background-color: #dae7d0;
+  background-color: #b5d38d;
 }
 
 h1 {
@@ -13,4 +13,13 @@ h1 {
 
 p {
   margin-left: 2.1rem;
+}
+
+@media only screen and (max-width: 940px) {
+  #product-overview-head{
+    height: 20vh;
+    h1 {
+      margin-bottom: 2340vh;
+    }
+  }
 }

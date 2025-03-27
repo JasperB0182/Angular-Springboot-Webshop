@@ -7,6 +7,6 @@ import {Component, Input} from '@angular/core';
   styleUrl: './category-block.component.scss'
 })
 export class CategoryBlockComponent {
-  @Input() CategorieNaam: string = '';
+  @Input() categorieNaam: string = '';
   @Input() ImgLocatie: string = '';
 }

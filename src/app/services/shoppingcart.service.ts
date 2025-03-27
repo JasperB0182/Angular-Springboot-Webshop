@@ -10,10 +10,10 @@ import {HttpClient} from '@angular/common/http';
 export class ShoppingcartService{
   totalCost : number = 0;
   protected httpClient = inject(HttpClient);
-  protected address = "Fortunalaan 14"
-  protected fullname = "Jasper Batenburg"
-  protected city = "Waddinxveen"
-  protected postcode = "2741SW"
+  protected address = ""
+  protected fullname = ""
+  protected city = ""
+  protected postcode = ""
 
   constructor() {
     const savedCart = localStorage.getItem('productsCart');
@@ -22,6 +22,22 @@ export class ShoppingcartService{
     } else {
       this.ProductsCart = [];
     }
+  }
+
+  public setAddress(address : string){
+    this.address = address
+  }
+
+  public setFullname(fullname : string){
+    this.fullname = fullname
+  }
+
+  public setCity(city : string){
+    this.city = city
+  }
+
+  public setPostcode(postcode : string){
+    this.postcode = postcode
   }
 
 
@@ -97,7 +113,6 @@ export class ShoppingcartService{
     localStorage.setItem('productsCart', JSON.stringify(this.ProductsCart));
     location.reload()
   }
-
 
 
 

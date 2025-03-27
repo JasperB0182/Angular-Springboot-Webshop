@@ -19,30 +19,11 @@ a {
 
 .shopping-cart-image {
   margin-top: 4vh;
-  margin-right: 1vw;
+
   cursor: pointer;
 }
 
-.admin-panel-list {
-  display: none;
-  list-style: none;
-  margin-top: 45px;
-  margin-right: auto;
 
-  a {
-    background-color: #f0f0f0;
-    padding: 1rem;
-    border-radius: 2rem;
-    font-size: 14px;
-    cursor: pointer;
-    transition: 0.3s;
-  }
-  a:hover {
-    background-color: #8cd50a;
-    box-shadow: 0 0 0 5px #c1e390;
-    color: white;
-  }
-}
 
 .register\/login {
   list-style: none;
@@ -55,7 +36,7 @@ a {
     margin-left: 3rem;
     border-radius: 0.5rem;
     cursor: pointer;
-    background-color: #f0f0f0;
+    background-color: #c1e390;
     font-size: 14px;
     transition: 0.3s
   }
@@ -107,6 +88,7 @@ img {
     border: none;
     cursor: pointer;
     transition: 0.3s;
+    background-color: #c1e390;
   }
 
   button:hover {
@@ -123,34 +105,31 @@ img {
 
 
 
-@media only screen and (max-width: 1254px) {
-  header {
-    position: static;
-  }
-  .register\/login {
-    a {
-      margin-left: 0.5rem;
-    }
-  }
-  .search-bar {
-    margin-left: auto;
-  }
-}
 
-@media only screen and (max-width: 1041px) {
+
+@media only screen and (max-width: 1490px) {
   .search-bar {
     input {
       width: 10rem;
     }
   }
-}
 
-@media only screen and (max-width: 722px) {
+  .category-block
   header {
     flex-direction: column;
     align-items: center;
     height: auto;
     width: 100%;
+  }
+}
+
+@media only screen and (max-width: 940px) {
+  nav {
+    flex-direction: column;
+    align-items: center;
+    height: auto;
+    width: 100%;
+    position: static;
   }
   .register\/login {
     order: 0;
@@ -179,19 +158,16 @@ img {
 
   }
 
-
-
   .search-bar {
     order: 2;
     margin-top: 0;
     input {
       width: auto;
     }
+    margin-left: 0;
   }
 
-  img {
-    display: none;
-  }
+
 
 
 }

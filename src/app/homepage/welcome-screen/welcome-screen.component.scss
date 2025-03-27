@@ -3,36 +3,31 @@
   height: 85vh;
   display: flex;
   align-items: center;
-  justify-content: flex-end;
-  background-image: url("https://i.ibb.co/tpVjqfpP/background.png");
+  justify-content: center;
+  background-image: url("https://i.ibb.co/99rRLXP0/computer-on-wooden-table-in-front-of-scenic-landscape-outside-window-photo-1.jpg");
   background-repeat: no-repeat;
   background-size: cover;
 }
 
 #welcome-text {
+  justify-self: center;
   color: white;
-  margin-right: 250px;
-  margin-bottom: 70px;
+  margin-bottom: 50vh;
   text-align: center;
   font-size: 40px;
   position: absolute;
   font-weight: bold;
 }
 
-#scroll-down {
-  color: white;
-  margin-top: 65vh;
-  margin-right: 24.65vw;
-  opacity: 50%;
-}
+
 
 #bekijk-assortiment {
   padding: 1rem;
+  justify-content: center;
   border-style: solid;
   border-radius: 2rem;
-  margin-top: 30vh;
+  margin-top: 50vh;
   position: absolute;
-  margin-right: 23vw;
   cursor: pointer;
   transition: 0.3s;
 }

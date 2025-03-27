@@ -14,6 +14,7 @@ export class ProductOverviewCardComponent {
   @Input() productimg : string = '';
   @Input() productbrandimg : string = '';
   @Input() productId : string = '';
+  @Input() productBeschrijving : string = '';
   @Input({transform: numberAttribute}) productprijs : number = 0;
 
 }

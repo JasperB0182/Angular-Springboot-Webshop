@@ -14,3 +14,9 @@ h1 {
   margin-top: 2rem;
   font-size: 2rem;
 }
+
+@media only screen and (max-width: 1127px) {
+  #category-container{
+  flex-direction: column;
+  }
+}
