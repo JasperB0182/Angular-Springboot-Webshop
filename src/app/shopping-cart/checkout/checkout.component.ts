@@ -6,6 +6,7 @@ import Swal from 'sweetalert2';
 import {LoginService} from '../../services/login.service';
 import {UserDetails} from '../../models/user.details.model';
 import {HttpClient} from '@angular/common/http';
+import {environment} from '../../../environments/environment';
 
 @Component({
   selector: 'app-checkout',
@@ -32,7 +33,7 @@ export class CheckoutComponent implements OnInit{
   protected userDetail? : UserDetails;
 
   ngOnInit() {
-    const subscription = this.httpClient.get<UserDetails>("http://localhost:8080/api/user/me").subscribe({
+    const subscription = this.httpClient.get<UserDetails>(environment.apiUrl + "/user/me").subscribe({
       next: (resData) => {
         this.userDetail = resData;
 
