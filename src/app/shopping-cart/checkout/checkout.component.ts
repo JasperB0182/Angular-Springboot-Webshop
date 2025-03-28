@@ -1,4 +1,4 @@
-import {Component, inject, OnInit} from '@angular/core';
+import {Component, DestroyRef, inject, OnInit} from '@angular/core';
 import {ShoppingcartService} from '../../services/shoppingcart.service';
 import {FormsModule, ReactiveFormsModule} from '@angular/forms';
 import {Router} from '@angular/router';
@@ -30,6 +30,7 @@ export class CheckoutComponent implements OnInit{
   protected postcode = ""
   protected httpClient = inject(HttpClient);
   protected userDetail? : UserDetails;
+  protected destroyRef = inject(DestroyRef)
 
   ngOnInit() {
     const subscription = this.httpClient.get<UserDetails>("http://localhost:8080/api/user/me").subscribe({
@@ -46,6 +47,10 @@ export class CheckoutComponent implements OnInit{
     });
 
     this.shoppingcart.CalculateTotalCost()
+
+    this.destroyRef.onDestroy(() => {
+      subscription.unsubscribe();
+    })
   }
 
   checkout() {

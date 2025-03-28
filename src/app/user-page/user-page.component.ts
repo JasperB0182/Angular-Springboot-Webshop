@@ -1,4 +1,4 @@
-import {Component, inject, OnInit} from '@angular/core';
+import {Component, DestroyRef, inject, OnInit} from '@angular/core';
 import {LoginService} from '../services/login.service';
 import {Router} from '@angular/router';
 import {HttpClient} from '@angular/common/http';
@@ -20,6 +20,8 @@ export class UserPageComponent implements OnInit{
 
   public userDetail? : UserDetails;
 
+  protected destroyRef = inject(DestroyRef);
+
   ngOnInit() {
     if (!this.LoginService.isLoggedIn()){
       this.router.navigate(["/login"]);
@@ -37,6 +39,10 @@ export class UserPageComponent implements OnInit{
         this.router.navigate(["/login"]);
       }
     });
+
+    this.destroyRef.onDestroy(() => {
+      subscription.unsubscribe();
+    })
   }
 
 }
