@@ -5,6 +5,7 @@ import {tap} from 'rxjs';
 import {LoginResponse} from '../models/login-response-model';
 import {Register} from '../models/register-model';
 import {Router} from '@angular/router';
+import {environment} from '../../environments/environment';
 
 @Injectable({
   providedIn: 'root'
@@ -15,6 +16,7 @@ export class LoginService {
   private httpClient = inject(HttpClient)
   loggedIn = false;
   private token: string | null = null;
+  protected api_link = environment.apiUrl
 
   public logOut(){
     this.resetToken();
@@ -37,7 +39,7 @@ export class LoginService {
 
   public login(login: Login) {
     const subscription = this.httpClient.post<LoginResponse>(
-      'http://localhost:8080/api/auth/login',
+      (this.api_link + '/auth/login'),
       login
     ).pipe(
       tap(responseData => {
@@ -53,7 +55,7 @@ export class LoginService {
 
   public register(login: Register) {
     const subscription = this.httpClient.post<LoginResponse>(
-      'http://localhost:8080/api/auth/register',
+      (this.api_link + 'auth/register'),
       login
     ).pipe(
       tap(responseData => {

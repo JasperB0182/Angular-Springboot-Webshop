@@ -4,6 +4,7 @@ import {HttpClient} from '@angular/common/http';
 import {Product} from '../../models/product-model';
 import {LoginService} from '../../services/login.service';
 import {Router} from '@angular/router';
+import {environment} from '../../../environments/environment';
 
 @Component({
   selector: 'app-list-product-showcase',
@@ -19,10 +20,11 @@ export class ListProductShowcaseComponent implements OnInit{
   ShowcaseProducts: any;
   private LoginService = inject(LoginService)
   protected router = inject(Router)
+  protected api_link = environment.apiUrl
 
 
   ngOnInit() {
-    const subscription = this.httpClient.get<{Product : Product}>("http://localhost:8080/api/products").subscribe({
+    const subscription = this.httpClient.get<{Product : Product}>(this.api_link + "/products").subscribe({
       next: (resData) => {
         this.ShowcaseProducts = resData;
       },

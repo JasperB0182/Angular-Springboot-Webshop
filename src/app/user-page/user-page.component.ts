@@ -3,6 +3,7 @@ import {LoginService} from '../services/login.service';
 import {Router} from '@angular/router';
 import {HttpClient} from '@angular/common/http';
 import {UserDetails} from '../models/user.details.model';
+import {environment} from '../../environments/environment';
 
 @Component({
   selector: 'app-user-page',
@@ -25,7 +26,7 @@ export class UserPageComponent implements OnInit{
       this.router.navigate(["/login"]);
     }
 
-    const subscription = this.httpClient.get<UserDetails>("http://localhost:8080/api/user/me").subscribe({
+    const subscription = this.httpClient.get<UserDetails>(environment.apiUrl + "/user/me").subscribe({
       next: (resData) => {
         this.userDetail = resData;
 

@@ -7,6 +7,7 @@ import {HttpClient} from '@angular/common/http';
 import {Subscription} from 'rxjs';
 import {ActivatedRoute} from '@angular/router';
 import {LoginService} from '../services/login.service';
+import {environment} from '../../environments/environment';
 
 @Component({
   selector: 'app-product-overview',
@@ -25,7 +26,7 @@ export class ProductOverviewComponent implements OnInit{
   private routeSub!: Subscription;
   constructor(private route: ActivatedRoute) { }
   public test: string = '';
-  public APIlink: string = '';
+  protected api_link = ""
   protected LoginService = inject(LoginService)
 
   ngOnInit() {
@@ -37,18 +38,18 @@ export class ProductOverviewComponent implements OnInit{
 
     // 24-3-2025, ik besef me nu pas dat ik ook gewoon de category had kunnen pakken en daar de producten uit..... Jammer dit
     if (this.test == "videokaarten") {
-      this.APIlink = "http://localhost:8080/api/products/category/Videokaarten";
+      this.api_link = (environment.apiUrl + "/products/category/Videokaarten");
     } else if (this.test == "processoren") {
-      this.APIlink = "http://localhost:8080/api/products/category/Processoren";
+      this.api_link = (environment.apiUrl + "/products/category/Processoren");
     } else if (this.test == "moederborden") {
-      this.APIlink = "http://localhost:8080/api/products/category/Moederborden";
+      this.api_link = (environment.apiUrl + "/products/category/Moederborden");
     } else {
-      this.APIlink = "http://localhost:8080/api/products";
+      this.api_link = (environment.apiUrl + "/products");
     }
 
 
     //TODO: maak de error handling een funcite PLS
-    const subscription = this.httpClient.get<{Product : Product}>(this.APIlink).subscribe({
+    const subscription = this.httpClient.get<{Product : Product}>(this.api_link).subscribe({
       next: (resData) => {
         this.Products = resData;
       },

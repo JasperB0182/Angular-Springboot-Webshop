@@ -2,6 +2,7 @@ import {inject, Injectable} from '@angular/core';
 import {Product} from '../models/product-model';
 import Swal from 'sweetalert2'
 import {HttpClient} from '@angular/common/http';
+import {environment} from '../../environments/environment';
 
 
 @Injectable({
@@ -55,7 +56,7 @@ export class ShoppingcartService{
     };
 
     this.httpClient.post(
-      'http://localhost:8080/api/bestelling/plaats',
+      (environment.apiUrl + '/bestelling/plaats'),
       bestelData
     ).subscribe(
       response => {

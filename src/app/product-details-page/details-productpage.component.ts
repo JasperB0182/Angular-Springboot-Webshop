@@ -7,6 +7,7 @@ import {FooterComponent} from '../global/footer/footer.component';
 import {Location} from '@angular/common';
 import {ShoppingcartService} from '../services/shoppingcart.service';
 import {LoginService} from '../services/login.service';
+import {environment} from '../../environments/environment';
 
 @Component({
   selector: 'app-product-details-page',
@@ -36,7 +37,7 @@ export class DetailsProductpageComponent implements OnInit{
   ngOnInit() {
     this.routeSub = this.route.params.subscribe(params => {
       this.webId = params['id'];
-      this.apiLink = "http://localhost:8080/api/products/" + this.webId;
+      this.apiLink = environment.apiUrl +"/products/" + this.webId;
 
 
       const subscription = this.httpClient.get<{ Product: Product }>(this.apiLink).subscribe({
