@@ -55,7 +55,7 @@ export class LoginService {
 
   public register(login: Register) {
     const subscription = this.httpClient.post<LoginResponse>(
-      (this.api_link + 'auth/register'),
+      (this.api_link + '/auth/register'),
       login
     ).pipe(
       tap(responseData => {

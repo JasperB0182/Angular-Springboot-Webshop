@@ -56,7 +56,6 @@ export class ProductOverviewComponent implements OnInit{
       error: (err : 401) => {
         this.LoginService.resetToken();
         this.LoginService.loggedIn = false;
-        window.location.reload()
       }
     });
 

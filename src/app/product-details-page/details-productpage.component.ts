@@ -48,7 +48,6 @@ export class DetailsProductpageComponent implements OnInit{
         error: (error : 401) => {
           this.LoginService.resetToken();
           this.LoginService.loggedIn = false;
-          window.location.reload()
         }
       });
 
