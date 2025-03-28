@@ -28,10 +28,10 @@ public class UserController {
 
         String currentUser = (String) authentication.getPrincipal();
 
-        System.out.println(currentUser);
-
         CustomUser customUser = this.userDAO.findByEmail(currentUser);
         customUser.setPassword("-");
+
+        System.out.println(customUser.getVoornaam() + ": " + currentUser + " is ingelogd.");
 
         return ResponseEntity.ok(customUser);
     }

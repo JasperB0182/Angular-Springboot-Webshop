@@ -51,19 +51,14 @@ public class BestellingController {
 
         String city = productListDTO.getCity();
 
-        System.out.println(city);
 
         String postcode = productListDTO.getPostcode();
-
-        System.out.println(postcode);
-
-        System.out.println(fullName);
 
         Authentication authentication = SecurityContextHolder.getContext().getAuthentication();
 
         String currentUser = (String) authentication.getPrincipal();
 
-        System.out.println(currentUser);
+        System.out.println(currentUser + " heeft iets besteld.");
 
         CustomUser customUser = this.userDAO.findByEmail(currentUser);
 
@@ -81,7 +76,6 @@ public class BestellingController {
             if (aantalInWinkelwagen > 10000){
                 aantalInWinkelwagen = 9999;
             }
-            System.out.println(aantalInWinkelwagen);
             Product Product = this.productsDAO.findByProductId(productId);
             BestellingProduct bestellingProduct = new BestellingProduct(aantalInWinkelwagen, bestelling, Product);
             bestellingProductList.add(bestellingProduct);

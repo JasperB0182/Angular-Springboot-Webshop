@@ -100,49 +100,6 @@ public class Seeder {
         this.productsRepository.save(product11);
 
 
-
-
-        Bestelling bestelling1 = new Bestelling(LocalDate.now(), customUser, "test", "testnaam", "testStad", "postcodebrrrr", (float) 69);
-
-        BestellingProduct bestellingProduct1 = new BestellingProduct(2, bestelling1, product14);
-        BestellingProduct bestellingProduct2 = new BestellingProduct(4, bestelling1, product9);
-        BestellingProduct bestellingProduct3 = new BestellingProduct(15, bestelling1, product6);
-
-        List<BestellingProduct> bestellingProductList = new ArrayList<>();
-        bestellingProductList.add(bestellingProduct1);
-        bestellingProductList.add(bestellingProduct2);
-        bestellingProductList.add(bestellingProduct3);
-
-        bestelling1.setBestellingProducten(bestellingProductList);
-
-
-        bestellingRepository.save(bestelling1);
-
-
-
-
-        Bestelling bestelling2 = new Bestelling(LocalDate.now(), customUser, "test", "testnaam", "testStad", "postcodebrrr", (float) 1569);
-
-        BestellingProduct bestellingProduct4 = new BestellingProduct(9, bestelling2, product4);
-        BestellingProduct bestellingProduct5 = new BestellingProduct(2, bestelling2, product12);
-        BestellingProduct bestellingProduct6 = new BestellingProduct(12, bestelling2, product15);
-
-        List<BestellingProduct> bestellingProductList2 = new ArrayList<>();
-        bestellingProductList2.add(bestellingProduct4);
-        bestellingProductList2.add(bestellingProduct5);
-        bestellingProductList2.add(bestellingProduct6);
-
-        bestelling2.setBestellingProducten(bestellingProductList2);
-
-
-        bestellingRepository.save(bestelling2);
-
-
-
-
-
-
-
     }
 
 }

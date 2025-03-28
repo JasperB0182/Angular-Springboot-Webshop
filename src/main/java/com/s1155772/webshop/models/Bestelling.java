@@ -46,6 +46,8 @@ public class Bestelling {
         this.totaleprijs = totaleprijs;
     }
 
+
+
     public float getTotaleprijs() {
         return totaleprijs;
     }
