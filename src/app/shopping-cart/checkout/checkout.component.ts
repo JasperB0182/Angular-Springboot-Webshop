@@ -60,13 +60,13 @@ export class CheckoutComponent implements OnInit{
     this.shoppingcart.setCity(this.city)
     this.shoppingcart.setPostcode(this.postcode)
     this.shoppingcart.checkout()
-    this.router.navigate(['/user']);
+    this.router.navigate(['/']);
     Swal.fire({
       title: "Succes!",
-      text: "Items zijn succesvol besteld!",
+      text: "Items zijn succesvol besteld! Ga naar je account pagina om je bestelling te bekijken.",
       icon: "success"
     })
-
+    this.shoppingcart.EmptyCartAfterCheckout()
   }
 
 

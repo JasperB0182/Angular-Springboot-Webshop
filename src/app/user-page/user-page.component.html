@@ -1,6 +1,8 @@
 <section id="user-page">
-  <button (click)="LoginService.logOut()">Logout</button>
-  <p>Hallo {{userDetail?.voornaam}}</p>
+  <button id="logout" (click)="LoginService.logOut()">Logout</button>
+  <p id="welkom-user">Welkom, {{userDetail?.voornaam}}</p>
+
+  <p id="mijn-orders">Mijn orders:</p>
 
   @for (bestelling of userDetail?.bestellingen ?? []; track bestelling.bestellingId) {
     <section class="bestelling-section">
@@ -8,6 +10,13 @@
     @for (bestellingproducten of bestelling.bestellingProducten ; track bestellingproducten.productBestellingNummer){
       <p>{{bestellingproducten.product.productNaam}} ({{bestellingproducten.hoeveelheid_besteld}}x)</p>
       }
+      <p>----------------------------------------------------------------------------------------------------------------</p>
+      <p>Totaalprijs: €{{bestelling.totaleprijs}}</p>
+      <a><br>Bestelling wordt bezorgd naar:</a>
+      <p>{{bestelling.fullname}}</p>
+      <p>{{bestelling.city}}</p>
+      <p>{{bestelling.address}}</p>
+      <p>{{bestelling.postcode}}</p>
     </section>
     }
 </section>

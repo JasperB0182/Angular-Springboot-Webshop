@@ -44,9 +44,6 @@ export class ShoppingcartService{
 
 
   public checkout() {
-    console.log(this.ProductsCart);
-
-
     const bestelData = {
       products: this.ProductsCart,
       address: this.address,
@@ -66,6 +63,8 @@ export class ShoppingcartService{
         console.error("Error during checkout:", error);
       }
     );
+
+
   }
 
 
@@ -113,6 +112,11 @@ export class ShoppingcartService{
     this.ProductsCart = [];
     localStorage.setItem('productsCart', JSON.stringify(this.ProductsCart));
     location.reload()
+  }
+
+  public EmptyCartAfterCheckout() {
+    this.ProductsCart = [];
+    localStorage.setItem('productsCart', JSON.stringify(this.ProductsCart));
   }
 
 
