@@ -4,6 +4,8 @@ import {FormsModule, ReactiveFormsModule} from '@angular/forms';
 import {Router} from '@angular/router';
 import Swal from 'sweetalert2';
 import {LoginService} from '../../services/login.service';
+import {UserDetails} from '../../models/user.details.model';
+import {HttpClient} from '@angular/common/http';
 
 @Component({
   selector: 'app-checkout',
@@ -26,11 +28,23 @@ export class CheckoutComponent implements OnInit{
   protected fullname = ""
   protected city = ""
   protected postcode = ""
+  protected httpClient = inject(HttpClient);
+  protected userDetail? : UserDetails;
 
   ngOnInit() {
-    if (!this.LoginService.isLoggedIn()){
-      this.router.navigate(['/login']);
-    }
+    const subscription = this.httpClient.get<UserDetails>("http://localhost:8080/api/user/me").subscribe({
+      next: (resData) => {
+        this.userDetail = resData;
+
+      },
+      //401
+      error: (error: 401) => {
+        this.LoginService.resetToken();
+        this.LoginService.loggedIn = false;
+        this.router.navigate(["/login"]);
+      }
+    });
+
     this.shoppingcart.CalculateTotalCost()
   }
 
