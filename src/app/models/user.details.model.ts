@@ -12,6 +12,11 @@ export interface bestellingen{
   bestellingId : number;
   orderDatum : string;
   bestellingProducten : bestellingProducten[];
+  totaleprijs : number;
+  fullname : string;
+  city : string;
+  address : string;
+  postcode : string;
 }
 
 export interface bestellingProducten{
