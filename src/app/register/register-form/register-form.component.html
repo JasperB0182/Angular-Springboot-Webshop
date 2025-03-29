@@ -1,20 +1,20 @@
 <section id="register-form">
   <form (ngSubmit)="register()">
-    <p id="grote-tekst">Register</p>
+    <p id="grote-tekst">{{ 'registreer-form.registreer' | translate }}</p>
     <div class="inloggen-email">
       <label for="email">Email:</label>
       <input id="email" type="email" [(ngModel)]="email" name="email" required>
     </div>
     <div class="inloggen-email">
-      <label for="email">Voornaam:</label>
+      <label for="email">{{ 'registreer-form.voornaam' | translate }}</label>
       <input id="Voornaam" type="text" [(ngModel)]="voornaam" name="voornaam" required>
     </div>
     <div class="inloggen-email">
       <label for="password">Password:</label>
-      <label class="password-recommendation">Het wachtwoord moet tussen 8-30 tekens bevatten</label>
-      <label class="password-recommendation">Gebruik minstens één hoofdletter, één kleine letter, één getal, en één speciaal teken</label>
+      <label class="password-recommendation">{{ 'registreer-form.wachtwoord' | translate }}</label>
+      <label class="password-recommendation">{{ 'registreer-form.wachtwoord2' | translate }} </label>
       <input id="password" type="password" [(ngModel)]="password" name="password" required>
     </div>
-    <button type="submit">Register</button>
+    <button type="submit">{{ 'registreer-form.registreer' | translate }}</button>
   </form>
 </section>

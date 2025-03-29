@@ -3,6 +3,8 @@ import {Product} from '../models/product-model';
 import Swal from 'sweetalert2'
 import {HttpClient} from '@angular/common/http';
 import {environment} from '../../environments/environment';
+import {HeaderComponent} from '../global/header/header.component';
+import {TranslateService} from '@ngx-translate/core';
 
 
 @Injectable({
@@ -11,6 +13,7 @@ import {environment} from '../../environments/environment';
 export class ShoppingcartService{
   totalCost : number = 0;
   protected httpClient = inject(HttpClient);
+  protected translate = inject(TranslateService);
   protected address = ""
   protected fullname = ""
   protected city = ""
@@ -23,6 +26,10 @@ export class ShoppingcartService{
     } else {
       this.ProductsCart = [];
     }
+  }
+
+  public get currentLanguage(): string {
+    return this.translate.currentLang;
   }
 
   public setAddress(address : string){
@@ -92,19 +99,11 @@ export class ShoppingcartService{
       let index = this.ProductsCart.findIndex((e) => e.productId === Product.productId)
       this.ProductsCart[index].aantalInWinkelwagen += 1;
       localStorage.setItem('productsCart', JSON.stringify(this.ProductsCart));
-      Swal.fire({
-        title: "Succes!",
-        text: "Items zijn toegevoegd aan de winkelwagen.",
-        icon: "success"
-      })
+      this.addedtocartnotif()
     } else {
     this.ProductsCart.push(Product)
     localStorage.setItem('productsCart', JSON.stringify(this.ProductsCart));
-    Swal.fire({
-      title: "Succes!",
-      text: "Items zijn toegevoegd aan de winkelwagen.",
-      icon: "success"
-    })
+    this.addedtocartnotif()
     }
   }
 
@@ -112,6 +111,22 @@ export class ShoppingcartService{
     this.ProductsCart = [];
     localStorage.setItem('productsCart', JSON.stringify(this.ProductsCart));
     location.reload()
+  }
+
+  protected addedtocartnotif(){
+    if (this.currentLanguage == "en"){
+      Swal.fire({
+        title: "Success!",
+        text: "Items succesfully added to cart",
+        icon: "success"
+      })
+    } else {
+      Swal.fire({
+        title: "Succes!",
+        text: "Items zijn toegevoegd aan de winkelwagen.",
+        icon: "success"
+      })
+    }
   }
 
   public EmptyCartAfterCheckout() {

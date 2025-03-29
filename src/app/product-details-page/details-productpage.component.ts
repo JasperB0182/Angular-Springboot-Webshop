@@ -8,16 +8,19 @@ import {Location} from '@angular/common';
 import {ShoppingcartService} from '../services/shoppingcart.service';
 import {LoginService} from '../services/login.service';
 import {environment} from '../../environments/environment';
+import {TranslatePipe, TranslateService} from '@ngx-translate/core';
 
 @Component({
   selector: 'app-product-details-page',
   imports: [
-    FooterComponent
+    FooterComponent,
+    TranslatePipe
   ],
   templateUrl: './details-productpage.component.html',
   styleUrl: './details-productpage.component.scss'
 })
 export class DetailsProductpageComponent implements OnInit{
+  protected translate = inject(TranslateService);
   private httpClient = inject(HttpClient)
   private destroyRef = inject(DestroyRef)
   Products: any;
@@ -27,6 +30,11 @@ export class DetailsProductpageComponent implements OnInit{
   apiLink!: string;
   protected shoppingcart = inject(ShoppingcartService);
   protected LoginService = inject(LoginService);
+
+
+  public get currentLanguage(): string {
+    return this.translate.currentLang;
+  }
 
 
   backClicked() {
@@ -50,6 +58,7 @@ export class DetailsProductpageComponent implements OnInit{
           this.LoginService.loggedIn = false;
         }
       });
+
 
       this.destroyRef.onDestroy(() => {
         subscription.unsubscribe();

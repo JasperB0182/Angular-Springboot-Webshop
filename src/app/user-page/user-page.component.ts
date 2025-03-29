@@ -4,10 +4,13 @@ import {Router} from '@angular/router';
 import {HttpClient} from '@angular/common/http';
 import {UserDetails} from '../models/user.details.model';
 import {environment} from '../../environments/environment';
+import {TranslatePipe} from '@ngx-translate/core';
 
 @Component({
   selector: 'app-user-page',
-  imports: [],
+  imports: [
+    TranslatePipe
+  ],
   templateUrl: './user-page.component.html',
   styleUrl: './user-page.component.scss'
 })

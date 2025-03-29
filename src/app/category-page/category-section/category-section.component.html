@@ -1,9 +1,9 @@
 <section id="category-choose-section">
-  <h1>Kies een categorie</h1>
+  <h1>{{ 'categorieblok.kiescategorie' | translate }}</h1>
   <article id="category-container">
-    <app-category-block categorieNaam="Alles" ImgLocatie="https://www.megekko.nl/productimg/967586/mini/1_HP-OMEN-45L-GT22-3225nd-Core-Ultra-9-RTX-5090-32GB-Gaming-Desktop.jpg" [routerLink]="['/products/alles']"/>
-    <app-category-block categorieNaam="Videokaarten" ImgLocatie="https://www.megekko.nl/productimg/297140/mini/1_Gigabyte-GeForce-RTX-5070-AORUS-MASTER-12G-Videokaart.jpg" [routerLink]="['/products/videokaarten']"/>
-    <app-category-block categorieNaam="Processoren" ImgLocatie="https://www.megekko.nl/productimg/999631/nw/1_AMD-Ryzen-Threadripper-7980X.jpg" [routerLink]="['/products/processoren']"/>
-    <app-category-block categorieNaam="Moederborden" ImgLocatie="https://www.megekko.nl/productimg/1149028/mini/1_Gigabyte-X870E-AORUS-XTREME-AI-TOP-moederbord.jpg" [routerLink]="['/products/moederborden']"/>
+    <app-category-block categorieNaam="{{ 'alles.categorieblok' | translate }}" ImgLocatie="https://www.megekko.nl/productimg/967586/mini/1_HP-OMEN-45L-GT22-3225nd-Core-Ultra-9-RTX-5090-32GB-Gaming-Desktop.jpg" [routerLink]="['/products/alles']"/>
+    <app-category-block categorieNaam="{{ 'videokaart.categorieblok' | translate }}" ImgLocatie="https://www.megekko.nl/productimg/297140/mini/1_Gigabyte-GeForce-RTX-5070-AORUS-MASTER-12G-Videokaart.jpg" [routerLink]="['/products/videokaarten']"/>
+    <app-category-block categorieNaam="{{ 'processor.categorieblok' | translate }}" ImgLocatie="https://www.megekko.nl/productimg/999631/nw/1_AMD-Ryzen-Threadripper-7980X.jpg" [routerLink]="['/products/processoren']"/>
+    <app-category-block categorieNaam="{{ 'motherboard.categorieblok' | translate }}" ImgLocatie="https://www.megekko.nl/productimg/1149028/mini/1_Gigabyte-X870E-AORUS-XTREME-AI-TOP-moederbord.jpg" [routerLink]="['/products/moederborden']"/>
   </article>
 </section>

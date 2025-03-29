@@ -5,17 +5,23 @@
     @if (LoginService.isLoggedIn()){
       <a id="Account-button" [routerLink]="['/user']">Account</a>
     } @else {
-      <a id="Register-button" [routerLink]="['/register']">Register</a>
+      <a id="Register-button" [routerLink]="['/register']">{{ 'header.registreer' | translate }}</a>
       <a id="Login-button" [routerLink]="['/login']">Login</a>
     }
   </li>
   <form class="search-bar" action="https://www.google.nl/">
-    <input type="text" placeholder="Zoek naar een artikel">
-    <button type="submit" >Zoeken</button>
+    <input type="text" placeholder="{{ 'header.searchartikel' | translate }}">
+    <button type="submit" >{{ 'header.zoeken' | translate }}</button>
   </form>
   <li class="register/login">
-    <a [routerLink]="['/products']">Categorieën</a>
+    <a [routerLink]="['/products']">{{ 'header.categorieen' | translate }}</a>
+    @if (currentLanguage == "nl"){
+      <button class="language" (click)="useLanguage('en')">Switch to EN</button>
+    } @else if (currentLanguage == "en"){
+      <button class="language" (click)="useLanguage('nl')">Switch to NL</button>
+    }
   </li>
+
   <img src="../assets/shopping-cart.jpg" height="50" width="50" class="shopping-cart-image" alt="Shopping cart icon" [routerLink]="['/shopping-cart']">
 
 </nav>

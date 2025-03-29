@@ -19,7 +19,6 @@ a {
 
 .shopping-cart-image {
   margin-top: 4vh;
-
   cursor: pointer;
 }
 
@@ -30,10 +29,12 @@ a {
   padding: 0;
   margin-top: 45px;
   width: 20%;
+  margin-left: 3rem;
 
   a {
+
     padding: 1rem;
-    margin-left: 3rem;
+    margin-left: 1rem;
     border-radius: 0.5rem;
     cursor: pointer;
     background-color: #c1e390;
@@ -62,7 +63,7 @@ img {
 
   input {
     padding: 0.7rem;
-    width: 30rem;
+    width: 20rem;
     border-radius: 0.5rem;
     transition: 0.3s;
     &::placeholder {
@@ -101,6 +102,15 @@ img {
 .logo-image {
   margin-left: 2vw;
   cursor: pointer;
+}
+
+.language {
+  background-color: #c1e390;
+  border-style: none;
+  border-radius: 2rem;
+  padding: 5px;
+  cursor: pointer;
+  margin-left: 2rem;
 }
 
 
