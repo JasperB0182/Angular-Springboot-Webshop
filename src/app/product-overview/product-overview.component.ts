@@ -1,4 +1,4 @@
-import {Component, DestroyRef, inject, Input, OnInit} from '@angular/core';
+import {Component, DestroyRef, inject, OnInit} from '@angular/core';
 import {FooterComponent} from '../global/footer/footer.component';
 import {ProductOverviewHeadComponent} from './product-overview-head/product-overview-head.component';
 import {ProductOverviewCardComponent} from './product-overview-card/product-overview-card.component';
@@ -47,7 +47,7 @@ export class ProductOverviewComponent implements OnInit{
     } else if (this.test == "moederborden") {
       this.api_link = (environment.apiUrl + "/products/category/Moederborden");
     } else {
-      this.api_link = (environment.apiUrl + "/products");
+      this.api_link = (environment.apiUrl + "/products/search/" + this.test);
     }
 
 
