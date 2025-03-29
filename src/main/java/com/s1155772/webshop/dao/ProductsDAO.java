@@ -1,9 +1,8 @@
-package com.s1155772.webshop.dao;
-
-import com.s1155772.webshop.models.Categorie;
+package com.s1155772.webshop.dao;import com.s1155772.webshop.models.Categorie;
 import com.s1155772.webshop.models.Product;
 import org.springframework.stereotype.Component;
 
+import java.util.ArrayList;
 import java.util.List;
 import java.util.Optional;
 
@@ -37,5 +36,16 @@ public class ProductsDAO {
     public Product findByProductId(Long productId) {
         return this.productsRepository.findById(productId)
                 .orElseThrow(() -> new RuntimeException("Product met dit ID niet gevonden: " + productId));
+    }
+
+    public List<Product> getProductByName(String name) {
+        List<Product> products = this.productsRepository.findAll();
+        List<Product> Searchproduct = new ArrayList<>();
+        for (Product product : products){
+            if (product.getProductNaam().toLowerCase().contains(name.toLowerCase())){
+                Searchproduct.add(product);
+            }
+        }
+        return Searchproduct;
     }
 }

@@ -40,26 +40,28 @@ public class Product {
     @Column(length = 1000)
     private String beschrijving;
 
-    public Product(String productNaam, int hoeveelheid, Brand brand, Categorie categorie, float prijs, String beschrijving, String imgProduct) {
+    @Column(length = 1000)
+    private String beschrijvingEN;
+
+    public Product(String productNaam, int hoeveelheid, Brand brand, Categorie categorie, float prijs, String beschrijving, String beschrijvingEN, String imgProduct) {
         this.productNaam = productNaam;
         this.hoeveelheid = hoeveelheid;
         this.categorie = categorie;
         this.brand = brand;
         this.prijs = prijs;
         this.beschrijving = beschrijving;
+        this.beschrijvingEN = beschrijvingEN;
         this.imgProduct = imgProduct;
     }
 
-    public Product(String productNaam, int hoeveelheid, Brand brand, Categorie categorie, List<BestellingProduct> bestellingProducten, float prijs, String imgProduct, int aantalInWinkelwagen, String beschrijving) {
-        this.productNaam = productNaam;
-        this.hoeveelheid = hoeveelheid;
-        this.brand = brand;
-        this.categorie = categorie;
-        this.bestellingProducten = bestellingProducten;
-        this.prijs = prijs;
-        this.imgProduct = imgProduct;
-        this.aantalInWinkelwagen = aantalInWinkelwagen;
-        this.beschrijving = beschrijving;
+
+
+    public String getBeschrijvingEN() {
+        return beschrijvingEN;
+    }
+
+    public void setBeschrijvingEN(String beschrijvingEN) {
+        this.beschrijvingEN = beschrijvingEN;
     }
 
     public int getAantalInWinkelwagen() {

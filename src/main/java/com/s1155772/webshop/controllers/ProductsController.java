@@ -33,5 +33,11 @@ public class ProductsController {
         return this.ProductsDAO.getProductsByCategory(categoryName);
     }
 
+    @GetMapping("/search/{name}")
+    public List<Product> getProductByName(@PathVariable String name){
+        return this.ProductsDAO.getProductByName(name);
+    }
+
+
 
 }
