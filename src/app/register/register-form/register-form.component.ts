@@ -2,13 +2,15 @@ import {Component, inject, OnInit} from '@angular/core';
 import {FormsModule, ReactiveFormsModule} from "@angular/forms";
 import {LoginService} from '../../services/login.service';
 import {Router} from '@angular/router';
+import {TranslatePipe} from '@ngx-translate/core';
 
 @Component({
   selector: 'app-register-form',
-    imports: [
-        FormsModule,
-        ReactiveFormsModule
-    ],
+  imports: [
+    FormsModule,
+    ReactiveFormsModule,
+    TranslatePipe
+  ],
   templateUrl: './register-form.component.html',
   styleUrl: './register-form.component.scss'
 })

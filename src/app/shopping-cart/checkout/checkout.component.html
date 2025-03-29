@@ -1,23 +1,21 @@
 <section id="checkout">
-  <p>{{userDetail?.voornaam}}, voer je gegevens in.</p>
-  <p>€{{shoppingcart.totalCost}}</p>
   <form (ngSubmit)="checkout()">
     <div>
-      <label for="address">Adres:</label>
+      <label for="address">{{ 'checkout.adres' | translate }}</label>
       <input id="address" type="text" [(ngModel)]="address" name="adres" required>
     </div>
     <div>
-      <label for="fullname">Volledige naam:</label>
+      <label for="fullname">{{ 'checkout.naam' | translate }}</label>
       <input id="fullname" type="text" [(ngModel)]="fullname" name="volledige naam" required>
     </div>
     <div>
-      <label for="city">Stad:</label>
+      <label for="city">{{ 'checkout.stad' | translate }}:</label>
       <input id="city" type="text" [(ngModel)]="city" name="stadsnaam" required>
     </div>
     <div>
-      <label for="postcode">Postcode:</label>
+      <label for="postcode">{{ 'checkout.postcode' | translate }}:</label>
       <input id="postcode" type="text" [(ngModel)]="postcode" name="postcode" required>
     </div>
-    <button type="submit">Bestelling bevestigen</button>
+    <button type="submit">{{ 'checkout.bevestigen' | translate }}</button>
   </form>
 </section>

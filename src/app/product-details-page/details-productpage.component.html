@@ -4,20 +4,23 @@
   @if (Products){
 
     <section id="product-details">
-      <button (click)="backClicked()" id="back-button">terug<br><-</button>
+      <button (click)="backClicked()" id="back-button">{{ 'productdetails.terug' | translate }}<br><-</button>
       <img src="{{Products.imgProduct}}" width="300px" height="300px">
       <div id="product-details-container">
         <p id="product-details-naam">{{Products.productNaam}}</p>
         <p id="product-details-prijs">€{{Products.prijs}}</p>
-        <p id="product-details-voorraad">Hoeveelheid op voorraad: {{ Products.hoeveelheid }}</p>
-        <p id="product-details-categorie">Categorie: {{Products.categorie.categoryName}}</p>
-        <p id="product-details-brand">Merk: {{Products.brand.merkNaam}}</p>
-        <button (click)="shoppingcart.AddToCart(Products)" id="koop-knop">Voeg toe aan winkelwagen</button>
+        <p id="product-details-voorraad">{{ 'productdetails.amount' | translate }} {{ Products.hoeveelheid }}</p>
+        <p id="product-details-brand">{{ 'productdetails.merk' | translate }} {{Products.brand.merkNaam}}</p>
+        <button (click)="shoppingcart.AddToCart(Products)" id="koop-knop">{{ 'productdetails.cart' | translate }}</button>
     </div>
     </section>
     <section id="product-details-met-specificaties">
-      <h1>Beschrijving:</h1>
-      <p id="product-details-beschrijving">{{ Products.beschrijving }}</p>
+      <h1>{{ 'productdetails.beschrijving' | translate }}</h1>
+      @if (this.currentLanguage == "nl"){
+      <p class="product-details-beschrijving">{{ Products.beschrijving }}</p>
+      } @else if (this.currentLanguage == "en"){
+        <p class="product-details-beschrijving">{{ Products.beschrijvingEN }}</p>
+      }
     </section>
 
 

@@ -1,4 +1,4 @@
 <section id="welcome-screen">
-  <p id="welcome-text">Al je hardware <br>benodigdheden op<br>één plek.</p>
-  <button id="bekijk-assortiment" [routerLink]="['/products']">Bekijk assortiment</button>
+  <p id="welcome-text">{{ 'homepage.welkomtekst' | translate }}<br>{{ 'homepage.welkomtekst2' | translate }}<br>{{ 'homepage.welkomtekst3' | translate }}</p>
+  <button id="bekijk-assortiment" [routerLink]="['/products']">{{ 'homepage.assortiment' | translate }}</button>
 </section>

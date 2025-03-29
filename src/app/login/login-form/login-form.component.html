@@ -1,7 +1,7 @@
 
 <section id="login-form">
   <form (ngSubmit)="login()">
-    <p id="grote-tekst">Inloggen</p>
+    <p id="grote-tekst">{{ 'login-form.inloggen' | translate }}</p>
     <div class="inloggen-email">
       <label for="email">Email:</label>
       <input id="email" type="email" [(ngModel)]="email" name="email" required>

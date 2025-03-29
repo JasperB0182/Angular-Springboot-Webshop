@@ -3,10 +3,13 @@ import {LoginService} from '../services/login.service';
 import {Router} from '@angular/router';
 import {HttpClient} from '@angular/common/http';
 import {UserDetails} from '../models/user.details.model';
+import {TranslatePipe} from '@ngx-translate/core';
 
 @Component({
   selector: 'app-user-page',
-  imports: [],
+  imports: [
+    TranslatePipe
+  ],
   templateUrl: './user-page.component.html',
   styleUrl: './user-page.component.scss'
 })

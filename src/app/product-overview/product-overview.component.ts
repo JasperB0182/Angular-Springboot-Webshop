@@ -7,6 +7,8 @@ import {HttpClient} from '@angular/common/http';
 import {Subscription} from 'rxjs';
 import {ActivatedRoute} from '@angular/router';
 import {LoginService} from '../services/login.service';
+import {TranslateService} from '@ngx-translate/core';
+
 
 @Component({
   selector: 'app-product-overview',
@@ -19,6 +21,7 @@ import {LoginService} from '../services/login.service';
   styleUrl: './product-overview.component.scss'
 })
 export class ProductOverviewComponent implements OnInit{
+  protected translate = inject(TranslateService);
   private httpClient = inject(HttpClient)
   private destroyRef = inject(DestroyRef)
   Products: any;
@@ -67,6 +70,10 @@ export class ProductOverviewComponent implements OnInit{
 
 
 
+  }
+
+  public get currentLanguage(): string {
+    return this.translate.currentLang;
   }
 
 }
