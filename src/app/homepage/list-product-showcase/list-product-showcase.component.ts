@@ -20,11 +20,10 @@ export class ListProductShowcaseComponent implements OnInit{
   ShowcaseProducts: any;
   private LoginService = inject(LoginService)
   protected router = inject(Router)
-  protected api_link = environment.apiUrl
 
 
   ngOnInit() {
-    const subscription = this.httpClient.get<{Product : Product}>(this.api_link + "/products").subscribe({
+    const subscription = this.httpClient.get<{Product : Product}>(environment.apiUrl + "/products").subscribe({
       next: (resData) => {
         this.ShowcaseProducts = resData;
       },

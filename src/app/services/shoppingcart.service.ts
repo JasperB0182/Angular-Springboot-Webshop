@@ -3,7 +3,6 @@ import {Product} from '../models/product-model';
 import Swal from 'sweetalert2'
 import {HttpClient} from '@angular/common/http';
 import {environment} from '../../environments/environment';
-import {HeaderComponent} from '../global/header/header.component';
 import {TranslateService} from '@ngx-translate/core';
 
 
@@ -11,7 +10,8 @@ import {TranslateService} from '@ngx-translate/core';
   providedIn: 'root'
 })
 export class ShoppingcartService{
-  totalCost : number = 0;
+  public totalCost : number = 0;
+  public ProductsCart : Product[];
   protected httpClient = inject(HttpClient);
   protected translate = inject(TranslateService);
   protected address = ""
@@ -63,31 +63,15 @@ export class ShoppingcartService{
       (environment.apiUrl + '/bestelling/plaats'),
       bestelData
     ).subscribe(
-      response => {
-        console.log("Checkout successful!", response);
-      },
-      error => {
-        console.error("Error during checkout:", error);
-      }
-    );
+      );
 
 
   }
 
 
-
-
-  public ProductsCart : Product[];
-
-  public showcartinConsoleLog() {
-    console.log(this.ProductsCart)
-}
-
-
   public CalculateTotalCost() {
     this.totalCost = 0;
     for(let i=0; i<this.ProductsCart.length; i++){
-      console.log(this.ProductsCart[i].prijs);
       this.totalCost += this.ProductsCart[i].prijs * this.ProductsCart[i].aantalInWinkelwagen;
     }
   }

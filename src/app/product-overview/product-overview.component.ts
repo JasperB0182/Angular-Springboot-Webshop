@@ -27,38 +27,38 @@ export class ProductOverviewComponent implements OnInit{
   private destroyRef = inject(DestroyRef)
   Products: any;
   private routeSub!: Subscription;
-  constructor(private route: ActivatedRoute) { }
-  public test: string = '';
+  public urlParameter: string = '';
   protected api_link = ""
   protected LoginService = inject(LoginService)
+
+
+  constructor(private route: ActivatedRoute) { }
 
   ngOnInit() {
 
     this.routeSub = this.route.params.subscribe(params => {
-      this.test = params['id']
+      this.urlParameter = params['id']
     });
 
 
-    // 24-3-2025, ik besef me nu pas dat ik ook gewoon de category had kunnen pakken en daar de producten uit..... Jammer dit
-    if (this.test == "videokaarten") {
+    if (this.urlParameter == "videokaarten") {
       this.api_link = (environment.apiUrl + "/products/category/Videokaarten");
-    } else if (this.test == "processoren") {
+    } else if (this.urlParameter == "processoren") {
       this.api_link = (environment.apiUrl + "/products/category/Processoren");
-    } else if (this.test == "moederborden") {
+    } else if (this.urlParameter == "moederborden") {
       this.api_link = (environment.apiUrl + "/products/category/Moederborden");
-    } else if (this.test == "alles") {
+    } else if (this.urlParameter == "alles") {
       this.api_link = (environment.apiUrl + "/products");
     } else {
-      this.api_link = (environment.apiUrl + "/products/search/" + this.test);
+      this.api_link = (environment.apiUrl + "/products/search/" + this.urlParameter);
     }
 
 
-    //TODO: maak de error handling een funcite PLS
     const subscription = this.httpClient.get<{Product : Product}>(this.api_link).subscribe({
       next: (resData) => {
         this.Products = resData;
       },
-      error: (err : 401) => {
+      error: () => {
         this.LoginService.resetToken();
         this.LoginService.loggedIn = false;
       }

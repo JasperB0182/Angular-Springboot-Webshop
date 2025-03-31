@@ -1,14 +1,18 @@
-<section id="shopping-cart-section-container">
-  <section id="shopping-cart-section-products">
-    <button (click)="shoppingcart.EmptyCart()">{{ 'winkelwagen.leeghalen' | translate }}</button>
-    @if (Products){
-      @for (product of Products ; track product){
-    <app-shopping-cart-product productImg="{{product.imgProduct}}" productNaam="{{product.productNaam}}" [productPrijs] = "product.prijs" [productWinkelwagen]="product.aantalInWinkelwagen"/>
+@if (shoppingcart.totalCost != 0){
+  <section id="shopping-cart-section-container">
+    <section id="shopping-cart-section-products">
+      <button id="empty-cart" (click)="shoppingcart.EmptyCart()">{{ 'winkelwagen.leeghalen' | translate }}</button>
+      @if (Products){
+        @for (product of Products ; track product){
+      <app-shopping-cart-product productImg="{{product.imgProduct}}" productNaam="{{product.productNaam}}" [productPrijs] = "product.prijs" [productWinkelwagen]="product.aantalInWinkelwagen"/>
+        }
       }
-    }
+    </section>
+    <section id="shopping-cart-section-price">
+      <p>€{{shoppingcart.totalCost}}</p>
+
+        <button id="checkout-button" [routerLink]="['/checkout']">Checkout</button>
+
+    </section>
   </section>
-  <section id="shopping-cart-section-price">
-    <p>€{{shoppingcart.totalCost}}</p>
-    <button [routerLink]="['/checkout']">Checkout</button>
-  </section>
-</section>
+}

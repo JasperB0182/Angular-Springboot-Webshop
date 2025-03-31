@@ -21,12 +21,18 @@
 
   margin-bottom: 5vh;
   input{
-    padding-right: 20vw;
+    padding: 8px;
+    margin-bottom: 10px;
   }
 }
 
 button {
-  margin-left: 45%;
+  margin-left: 40%;
+  padding: 8px;
+  border-style: none;
+  border-radius: 0.5rem;
+  background-color: white;
+  cursor: pointer;
 }
 
 .password-recommendation {

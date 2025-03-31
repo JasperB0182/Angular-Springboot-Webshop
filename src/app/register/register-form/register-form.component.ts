@@ -31,7 +31,6 @@ export class RegisterFormComponent implements OnInit{
       },
       error: (error) => {
         if (error.status == 403){
-          //To redirect back to login page
           this.router.navigate(["/register"])
         }
       }

@@ -1,5 +1,4 @@
 import { Component } from '@angular/core';
-import {ProductShowcaseComponent} from '../product-showcase/product-showcase.component';
 import {ListProductShowcaseComponent} from '../list-product-showcase/list-product-showcase.component';
 
 @Component({

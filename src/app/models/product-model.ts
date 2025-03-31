@@ -1,17 +1,7 @@
-export interface Categorie {
-  categoryId: number;
-  categoryName: string;
-  products?: Product[];
-}
+import {Brand} from './brand-model';
+import {Categorie} from './categorie-model';
 
-export interface Brand {
-  merkId: number;
-  merkNaam: string;
-  imgLocation: string;
-  products?: Product[];
-}
-
-export interface Product {
+export interface Product{
   productId: number;
   productNaam: string;
   hoeveelheid: number;

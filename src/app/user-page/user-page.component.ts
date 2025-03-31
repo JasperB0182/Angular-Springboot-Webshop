@@ -36,8 +36,7 @@ export class UserPageComponent implements OnInit{
         this.userDetail = resData;
 
       },
-      //401
-      error: (error: 401) => {
+      error: () => {
         this.LoginService.resetToken();
         this.LoginService.loggedIn = false;
         this.router.navigate(["/login"]);

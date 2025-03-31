@@ -23,13 +23,16 @@ export class DetailsProductpageComponent implements OnInit{
   protected translate = inject(TranslateService);
   private httpClient = inject(HttpClient)
   private destroyRef = inject(DestroyRef)
-  Products: any;
-  private routeSub!: Subscription;
-  constructor(private route: ActivatedRoute, private location: Location) { }
-  webId : any;
-  apiLink!: string;
   protected shoppingcart = inject(ShoppingcartService);
   protected LoginService = inject(LoginService);
+  Products: any;
+  private routeSub!: Subscription;
+  webId! : string;
+  apiLink!: string;
+
+
+  constructor(private route: ActivatedRoute, private location: Location) { }
+
 
 
   public get currentLanguage(): string {

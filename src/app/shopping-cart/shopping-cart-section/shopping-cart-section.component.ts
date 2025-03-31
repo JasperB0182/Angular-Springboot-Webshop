@@ -38,7 +38,6 @@ export class ShoppingCartSectionComponent implements OnInit{
     const subscription = this.httpClient.get<UserDetails>(environment.apiUrl + "/user/me").subscribe({
       next: (resData) => {
       },
-      //
       error: () => {
         this.LoginService.resetToken();
         this.LoginService.loggedIn = false;
