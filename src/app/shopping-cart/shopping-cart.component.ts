@@ -12,6 +12,6 @@ import {ShoppingcartService} from '../services/shoppingcart.service';
 })
 export class ShoppingCartComponent {
 
-  protected shoppingcart = inject(ShoppingcartService)
+
 
 }

@@ -107,6 +107,13 @@ export class ShoppingcartService{
     }
   }
 
+  public RemoveFromCart(productNaam : string){
+    const index = this.ProductsCart.findIndex(Product => Product.productNaam === productNaam)
+    this.ProductsCart.splice(index, 1)
+    localStorage.setItem('productsCart', JSON.stringify(this.ProductsCart))
+    window.location.reload()
+  }
+
   public EmptyCart(){
     this.ProductsCart = [];
     localStorage.setItem('productsCart', JSON.stringify(this.ProductsCart));

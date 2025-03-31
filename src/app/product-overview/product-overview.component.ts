@@ -46,6 +46,8 @@ export class ProductOverviewComponent implements OnInit{
       this.api_link = (environment.apiUrl + "/products/category/Processoren");
     } else if (this.test == "moederborden") {
       this.api_link = (environment.apiUrl + "/products/category/Moederborden");
+    } else if (this.test == "alles") {
+      this.api_link = (environment.apiUrl + "/products");
     } else {
       this.api_link = (environment.apiUrl + "/products/search/" + this.test);
     }

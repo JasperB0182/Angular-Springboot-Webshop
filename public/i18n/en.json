@@ -28,9 +28,10 @@
   "user-page.totaalprijs": "Total price",
   "user-page.delivered": "Order will be delivered to:",
   "login-form.inloggen": "Login",
-  "checkout.adres": "Addres",
-  "checkout.naam": "Fullname",
+  "checkout.adres": "Address",
+  "checkout.naam": "Fullname:",
   "checkout.stad": "City",
   "checkout.postcode": "Zip code",
-  "checkout.bevestigen": "Confirm order"
+  "checkout.bevestigen": "Confirm order",
+  "winkelwagen.leeghalen": "Empty cart"
 }

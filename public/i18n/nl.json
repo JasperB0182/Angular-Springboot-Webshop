@@ -29,10 +29,11 @@
   "user-page.delivered": "Bestelling wordt geleverd bij:",
   "login-form.inloggen": "inloggen",
   "checkout.adres": "Adres",
-  "checkout.naam": "Volledige naam",
+  "checkout.naam": "Volledige naam:",
   "checkout.stad": "Plaats",
   "checkout.postcode": "Postcode",
   "checkout.bevestigen": "Bestelling bevestigen",
-  "notification.addtocart": "Items zijn succesvol toegevoegd aan winkelwagen"
+  "notification.addtocart": "Items zijn succesvol toegevoegd aan winkelwagen",
+  "winkelwagen.leeghalen": "Winkelwagen leeghalen"
 
 }

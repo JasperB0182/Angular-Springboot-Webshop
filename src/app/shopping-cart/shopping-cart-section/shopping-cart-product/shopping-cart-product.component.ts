@@ -1,4 +1,5 @@
-import {Component, Input} from '@angular/core';
+import {Component, inject, Input} from '@angular/core';
+import {ShoppingcartService} from '../../../services/shoppingcart.service';
 
 @Component({
   selector: 'app-shopping-cart-product',
@@ -7,10 +8,16 @@ import {Component, Input} from '@angular/core';
   styleUrl: './shopping-cart-product.component.scss'
 })
 export class ShoppingCartProductComponent {
-  @Input() productNaam? : string;
-  @Input() productImg? : string;
-  @Input() productPrijs? : number;
+  @Input() productNaam! : string;
+  @Input() productImg! : string;
+  @Input() productPrijs! : number;
   @Input() productWinkelwagen! : number;
+
+  protected shoppingcartService = inject(ShoppingcartService)
+
+  protected removefromcart(){
+    this.shoppingcartService.RemoveFromCart(this.productNaam)
+  }
 
 
 }

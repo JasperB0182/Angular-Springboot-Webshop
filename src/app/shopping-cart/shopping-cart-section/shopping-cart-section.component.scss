@@ -5,6 +5,10 @@
   justify-content: space-evenly;
 }
 
+#shopping-cart-remove {
+
+}
+
 #shopping-cart-section-price {
   margin-top: 7vh;
   width: 20%;
@@ -22,4 +26,13 @@
   height: auto;
   align-self: flex-start;
 
+}
+
+@media only screen and (max-width: 1248px) {
+  #shopping-cart-section-container{
+    flex-direction: column;
+    #shopping-cart-section-products {
+      width: 90%;
+    }
+  }
 }

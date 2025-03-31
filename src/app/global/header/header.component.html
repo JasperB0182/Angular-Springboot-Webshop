@@ -9,9 +9,9 @@
       <a id="Login-button" [routerLink]="['/login']">Login</a>
     }
   </li>
-  <form class="search-bar" action="https://www.google.nl/">
-    <input type="text" placeholder="{{ 'header.searchartikel' | translate }}">
-    <button type="submit" >{{ 'header.zoeken' | translate }}</button>
+  <form class="search-bar" (ngSubmit)="zoekfunctie()">
+    <input type="text" placeholder="{{ 'header.searchartikel' | translate }}" [(ngModel)]="search" name="search">
+    <button type="submit">{{ 'header.zoeken' | translate }}</button>
   </form>
   <li class="register/login">
     <a [routerLink]="['/products']">{{ 'header.categorieen' | translate }}</a>
