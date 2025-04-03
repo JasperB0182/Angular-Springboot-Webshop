@@ -1,6 +1,7 @@
 package com.s1155772.webshop.controllers;
 
 
+import com.s1155772.webshop.dao.ProductDAO;
 import com.s1155772.webshop.models.Product;
 import org.springframework.web.bind.annotation.*;
 
@@ -12,30 +13,30 @@ import java.util.Optional;
 @RequestMapping("/products")
 public class ProductsController {
 
-    private com.s1155772.webshop.dao.ProductsDAO ProductsDAO;
+    private ProductDAO ProductDAO;
 
-    public ProductsController(com.s1155772.webshop.dao.ProductsDAO productsDAO) {
-        this.ProductsDAO = productsDAO;
+    public ProductsController(ProductDAO productDAO) {
+        this.ProductDAO = productDAO;
     }
 
     @GetMapping
-    public List<Product> getAllproducts(){
-        return this.ProductsDAO.getAllProducts();
+    public List<Product> getAllProducts(){
+        return this.ProductDAO.getAllProducts();
     }
 
     @GetMapping("/{id}")
     public Optional<Product> getProductById(@PathVariable Long id){
-        return this.ProductsDAO.getProductById(id);
+        return this.ProductDAO.getProductById(id);
     }
 
     @GetMapping("/category/{categoryName}")
     public List<Product> getProductsByCategory(@PathVariable String categoryName){
-        return this.ProductsDAO.getProductsByCategory(categoryName);
+        return this.ProductDAO.getProductsByCategory(categoryName);
     }
 
     @GetMapping("/search/{name}")
     public List<Product> getProductByName(@PathVariable String name){
-        return this.ProductsDAO.getProductByName(name);
+        return this.ProductDAO.getProductByName(name);
     }
 
 

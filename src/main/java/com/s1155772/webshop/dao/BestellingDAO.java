@@ -15,12 +15,6 @@ public class BestellingDAO {
         this.bestellingRepository = bestellingRepository;
     }
 
-
-    public List<Bestelling> getAllBestellingen() {
-        List<Bestelling> Bestellingen = this.bestellingRepository.findAll();
-        return Bestellingen;
-    }
-
     public void saveToDatabase(Bestelling bestelling) {
         bestellingRepository.save(bestelling);
     }

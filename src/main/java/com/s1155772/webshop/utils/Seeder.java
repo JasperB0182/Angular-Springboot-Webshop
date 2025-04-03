@@ -7,13 +7,9 @@ import org.springframework.context.event.EventListener;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.stereotype.Component;
 
-import java.time.LocalDate;
-import java.util.ArrayList;
-import java.util.List;
-
 @Component
 public class Seeder {
-    private ProductsRepository productsRepository;
+    private ProductRepository productRepository;
 
     private BrandRepository brandRepository;
 
@@ -27,8 +23,8 @@ public class Seeder {
 
     private UserRepository userRepository;
 
-    public Seeder(ProductsRepository productsRepository, BrandRepository brandRepository, CategoryRepository categoryRepository, BestellingRepository bestellingRepository, BestellingProductRepository bestellingProductRepository, UserRepository userRepository) {
-        this.productsRepository = productsRepository;
+    public Seeder(ProductRepository productRepository, BrandRepository brandRepository, CategoryRepository categoryRepository, BestellingRepository bestellingRepository, BestellingProductRepository bestellingProductRepository, UserRepository userRepository) {
+        this.productRepository = productRepository;
         this.brandRepository = brandRepository;
         this.categoryRepository = categoryRepository;
         this.bestellingRepository = bestellingRepository;
@@ -83,21 +79,21 @@ public class Seeder {
         Product product14 = new Product("MSI MAG Z790 TOMAHAWK WIFI", 383000, MSI, moederborden, 259, "Het MSI MAG Z790 TOMAHAWK WIFI is een krachtig ATX-moederbord voor Intel Socket 1700-processors. Met de Intel Z790-chipset, ondersteuning voor maximaal 128 GB DDR5-geheugen en 4 M.2-sleuven biedt dit moederbord de nodige prestaties en flexibiliteit voor veeleisende desktopcomputers. Daarnaast is het uitgerust met Wi-Fi en een enkele PCI-E 5.0 x16-sleuf voor geavanceerde grafische kaarten. Dit MSI-moederbord is een solide keuze voor enthousiastelingen die op zoek zijn naar een robuust en veelzijdig Intel Socket 1700-platform.", "The MSI MAG Z790 TOMAHAWK WIFI is a powerful ATX motherboard for Intel Socket 1700 processors. With the Intel Z790 chipset, support for up to 128GB DDR5 memory and 4 M.2 slots, this motherboard offers the necessary performance and flexibility for demanding desktop computers. In addition, it is equipped with Wi-Fi and a single PCI-E 5.0 x16 slot for advanced graphics cards.", "https://www.megekko.nl/productimg/1070478/mini/1_MSI-MAG-Z790-TOMAHAWK-WIFI-moederbord.jpg");
         Product product15 = new Product("Gigabyte B760 GAMING X", 222000, Gigabyte, moederborden, 388, "Het Gigabyte B760 GAMING X moederbord is een krachtig Intel Socket 1700 moederbord dat is ontworpen voor gaming en high-performance toepassingen. Met een ATX form factor, 4 geheugenslots voor maximaal 256 GB DDR5 geheugen en 3 M.2 slots, biedt dit moederbord de flexibiliteit en capaciteit die gebruikers nodig hebben voor hun high-end systemen. Het Intel B760 chipset zorgt voor een betrouwbare en efficiënte prestatie, waardoor dit moederbord een geweldige keuze is voor zowel gaming als professioneel gebruik.", "The Gigabyte B760 GAMING X motherboard is a powerful Intel Socket 1700 motherboard designed for gaming and high-performance applications. Featuring an ATX form factor, 4 memory slots for up to 256GB DDR5 memory and 3 M.2 slots, this motherboard offers the flexibility and capacity users need for their high-end systems.", "https://www.megekko.nl/productimg/1076241/mini/1_Gigabyte-B760-GAMING-X-moederbord.jpg");
 
-        this.productsRepository.save(product5);
-        this.productsRepository.save(product14);
-        this.productsRepository.save(product7);
-        this.productsRepository.save(product);
-        this.productsRepository.save(product13);
-        this.productsRepository.save(product6);
-        this.productsRepository.save(product3);
-        this.productsRepository.save(product10);
-        this.productsRepository.save(product15);
-        this.productsRepository.save(product8);
-        this.productsRepository.save(product4);
-        this.productsRepository.save(product12);
-        this.productsRepository.save(product2);
-        this.productsRepository.save(product9);
-        this.productsRepository.save(product11);
+        this.productRepository.save(product5);
+        this.productRepository.save(product14);
+        this.productRepository.save(product7);
+        this.productRepository.save(product);
+        this.productRepository.save(product13);
+        this.productRepository.save(product6);
+        this.productRepository.save(product3);
+        this.productRepository.save(product10);
+        this.productRepository.save(product15);
+        this.productRepository.save(product8);
+        this.productRepository.save(product4);
+        this.productRepository.save(product12);
+        this.productRepository.save(product2);
+        this.productRepository.save(product9);
+        this.productRepository.save(product11);
 
 
     }

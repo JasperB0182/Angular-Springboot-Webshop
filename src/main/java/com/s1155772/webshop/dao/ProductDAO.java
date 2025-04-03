@@ -7,39 +7,39 @@ import java.util.List;
 import java.util.Optional;
 
 @Component
-public class ProductsDAO {
+public class ProductDAO {
 
-    private ProductsRepository productsRepository;
+    private ProductRepository productRepository;
 
     private CategoryRepository categoryRepository;
 
-    public ProductsDAO(ProductsRepository productsRepository, CategoryRepository categoryRepository) {
-        this.productsRepository = productsRepository;
+    public ProductDAO(ProductRepository productRepository, CategoryRepository categoryRepository) {
+        this.productRepository = productRepository;
         this.categoryRepository = categoryRepository;
     }
 
     public List<Product> getAllProducts(){
-        List<Product> products = this.productsRepository.findAll();
+        List<Product> products = this.productRepository.findAll();
         return products;
     }
 
     public List<Product> getProductsByCategory(String categoryName) {
         Categorie categorie = this.categoryRepository.findBycategoryName(categoryName);
-        return this.productsRepository.findByCategorie(categorie);
+        return this.productRepository.findByCategorie(categorie);
     }
 
 
     public Optional<Product> getProductById(Long productId) {
-        return this.productsRepository.findById(productId);
+        return this.productRepository.findById(productId);
     }
 
     public Product findByProductId(Long productId) {
-        return this.productsRepository.findById(productId)
+        return this.productRepository.findById(productId)
                 .orElseThrow(() -> new RuntimeException("Product met dit ID niet gevonden: " + productId));
     }
 
     public List<Product> getProductByName(String name) {
-        List<Product> products = this.productsRepository.findAll();
+        List<Product> products = this.productRepository.findAll();
         List<Product> Searchproduct = new ArrayList<>();
         for (Product product : products){
             if (product.getProductNaam().toLowerCase().contains(name.toLowerCase())){
