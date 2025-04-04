@@ -34,11 +34,11 @@ public class Seeder {
 
     @EventListener
     public void Seed(ContextRefreshedEvent event){
-        CustomUser customUser = new CustomUser();
-        customUser.setEmail("user@mail.com");
-        customUser.setPassword(new BCryptPasswordEncoder().encode("hallo"));
-        customUser.setVoornaam("Jasper");
-        userRepository.save(customUser);
+//        CustomUser customUser = new CustomUser();
+//        customUser.setEmail("user@mail.com");
+//        customUser.setPassword(new BCryptPasswordEncoder().encode("hallo"));
+//        customUser.setVoornaam("Jasper");
+//        userRepository.save(customUser);
 
 
         Categorie videokaarten = new Categorie("Videokaarten");
