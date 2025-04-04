@@ -6,6 +6,7 @@ import com.s1155772.webshop.dao.ProductDAO;
 import com.s1155772.webshop.dao.UserDAO;
 import com.s1155772.webshop.dto.BestellingDTO;
 import com.s1155772.webshop.models.*;
+import jakarta.validation.Valid;
 import org.springframework.security.core.Authentication;
 import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.web.bind.annotation.*;
@@ -36,7 +37,7 @@ public class BestellingController {
 
 
     @PostMapping("/plaats")
-    public void setNewBestelling(@RequestBody BestellingDTO bestellingDTO){
+    public void setNewBestelling(@Valid @RequestBody BestellingDTO bestellingDTO){
         List<Product> productList = bestellingDTO.getProducts();
 
         String address = bestellingDTO.getAddress();

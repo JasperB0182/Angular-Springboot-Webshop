@@ -1,19 +1,27 @@
 package com.s1155772.webshop.dto;
 
 import com.s1155772.webshop.models.Product;
+import jakarta.validation.constraints.Min;
+import jakarta.validation.constraints.NotNull;
+import jakarta.validation.constraints.Size;
 
 import java.util.List;
 
 public class BestellingDTO {
 
+    @NotNull
     private List<Product> products;
 
+    @Size(min=3, max=40)
     private String address;
 
+    @Size(min=3, max=35)
     private String fullname;
 
+    @Size(min = 3, max = 20)
     private String city;
 
+    @Size(min=6, max=6)
     private String postcode;
 
     public BestellingDTO(List<Product> products, String address, String fullname, String city, String postcode) {

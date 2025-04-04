@@ -7,6 +7,7 @@ import com.s1155772.webshop.dto.AuthenticationDTO;
 import com.s1155772.webshop.dto.LoginResponse;
 import com.s1155772.webshop.models.CustomUser;
 import com.s1155772.webshop.services.CredentialValidator;
+import jakarta.validation.Valid;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.security.authentication.AuthenticationManager;
@@ -37,7 +38,7 @@ public class AuthController {
     }
 
     @PostMapping("/register")
-    public ResponseEntity<LoginResponse> register(@RequestBody AuthenticationDTO authenticationDTO) {
+    public ResponseEntity<LoginResponse> register(@Valid @RequestBody AuthenticationDTO authenticationDTO) {
         if (!validator.isValidEmail(authenticationDTO.email)) {
             throw new ResponseStatusException(
                     HttpStatus.BAD_REQUEST, "No valid email provided"
