@@ -31,8 +31,6 @@ public class UserController {
         CustomUser customUser = this.userDAO.findByEmail(currentUser);
         customUser.setPassword("-");
 
-        System.out.println(customUser.getVoornaam() + ": " + currentUser + " is ingelogd.");
-
         return ResponseEntity.ok(customUser);
     }
 

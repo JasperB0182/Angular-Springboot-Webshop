@@ -68,8 +68,8 @@ public class BestellingController {
             totalePrijs += prijs;
             Long productId = (long) product.getProductId();
             int aantalInWinkelwagen = product.getAantalInWinkelwagen();
-            if (aantalInWinkelwagen > 10000){
-                aantalInWinkelwagen = 9999;
+            if (aantalInWinkelwagen > 100000){
+                aantalInWinkelwagen = 99999;
             }
             Product Product = this.productDAO.findByProductId(productId);
             BestellingProduct bestellingProduct = new BestellingProduct(aantalInWinkelwagen, bestelling, Product);
