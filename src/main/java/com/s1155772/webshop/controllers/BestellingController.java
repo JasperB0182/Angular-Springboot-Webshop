@@ -52,8 +52,6 @@ public class BestellingController {
 
         String currentUser = (String) authentication.getPrincipal();
 
-        System.out.println(currentUser + " heeft iets besteld.");
-
         CustomUser customUser = this.userDAO.findByEmail(currentUser);
 
         Bestelling bestelling = new Bestelling(LocalDate.now(), customUser, address, fullName, city, postcode, (float) 0);

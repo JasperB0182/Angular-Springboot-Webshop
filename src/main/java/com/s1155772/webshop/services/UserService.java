@@ -26,7 +26,6 @@ public class UserService implements UserDetailsService {
         return new User(
                 email,
                 customUser.getPassword(),
-                // 10:25 voor admin role etc.
                 Collections.singleton(new SimpleGrantedAuthority("ROLE_USER")));
     }
 }

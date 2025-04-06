@@ -5,7 +5,6 @@ import jakarta.persistence.*;
 
 import java.util.List;
 
-//Problemen? Check de constructor!!!
 
 @Entity
 public class Categorie {

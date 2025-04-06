@@ -2,7 +2,7 @@ package com.s1155772.webshop.models;
 
 import jakarta.persistence.*;
 
-//Problemen? Check de constructor!!!
+
 
 @Entity
 public class BestellingProduct {

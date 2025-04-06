@@ -8,7 +8,7 @@ import jakarta.persistence.OneToMany;
 
 import java.util.List;
 
-// Het is misschien maar handiger als ik alle gegevens stuur van de ingelogde gebruiker.
+
 
 @Entity(name = "custom_user")
 public class CustomUser {
@@ -23,7 +23,7 @@ public class CustomUser {
 
     private String voornaam;
 
-    // Gewoon niet in de constructor zetten dan!!
+
     @OneToMany(mappedBy = "gebruiker")
     @JsonIgnoreProperties("gebruiker")
     private List<Bestelling> bestellingen;
