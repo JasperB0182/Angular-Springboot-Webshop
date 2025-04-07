@@ -61,6 +61,9 @@ public class BestellingController {
         float totalePrijs = 0;
 
         for (Product product : productList){
+            if (product.getAantalInWinkelwagen() <= 0 ){
+                product.setAantalInWinkelwagen(0);
+            }
             Product originalProduct = this.productDAO.findByProductId((long) product.getProductId());
             float prijs = (originalProduct.getPrijs() * product.getAantalInWinkelwagen());
             totalePrijs += prijs;
