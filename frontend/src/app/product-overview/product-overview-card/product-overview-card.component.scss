@@ -1,0 +1,110 @@
+.product-overview-card {
+  height: 10rem;
+  padding: 0;
+  margin: 0;
+  width: 99%;
+  border-style: solid;
+  display: flex;
+  cursor: pointer;
+}
+
+img {
+  margin-left: 2rem;
+  margin-top: 1rem;
+}
+
+#product-overview-naam {
+    margin-left: 2rem;
+    margin-top: 1rem;
+}
+
+#product-prijs {
+  position: absolute;
+  margin-top: 4rem;
+  margin-left: 12rem;
+  font-size: 2rem;
+
+}
+
+#product-brand-img {
+  position: absolute;
+  margin-left: 20vw;
+  margin-top: 5vh;
+
+}
+
+button {
+  padding: 1rem;
+  margin-top: 3rem;
+  margin-bottom: 3rem;
+  margin-left: auto;
+  margin-right: 4rem;
+
+}
+
+#product-overview-beschrijving {
+  max-width: 50rem;
+  font-size: 13px;
+  margin-top: 5vh;
+  margin-left: auto;
+}
+
+@media only screen and (max-width: 1490px) {
+  #product-overview-beschrijving {
+    max-width: 40rem;
+  }
+
+  #product-brand-img{
+    margin-left: 30vw;
+  }
+
+}
+
+
+
+@media only screen and (max-width: 1060px) {
+  #product-overview-beschrijving {
+    max-width: 30rem;
+  }
+  #product-overview-beschrijving {
+    font-size: 12px;
+  }
+
+}
+
+@media only screen and (max-width: 940px) {
+  #product-overview-beschrijving {
+    display: none;
+  }
+
+  #product-brand-img{
+    margin-left: 75vw;
+  }
+}
+
+@media only screen and (max-width: 455px) {
+  .product-overview-card{
+    height: 7rem;
+  }
+
+  #product-brand-img {
+    max-width: 70px;
+    max-height: 70px;
+  }
+
+  #product-overview-naam{
+    font-size: 0.8rem;
+  }
+
+  #product-prijs{
+    font-size: 0.8rem;
+    margin-top: 12vh;
+  }
+
+  img {
+    max-width: 70px;
+    max-height: 70px;
+  }
+}
+
+

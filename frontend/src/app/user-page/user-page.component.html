@@ -1,0 +1,22 @@
+<section id="user-page">
+  <button id="logout" (click)="LoginService.logOut()">Logout</button>
+  <p id="welkom-user">{{ 'user-page.welkom' | translate }}, {{userDetail?.voornaam}}</p>
+
+  <p id="mijn-orders">{{ 'user-page.mijnbestellingen' | translate }}</p>
+
+  @for (bestelling of userDetail?.bestellingen ?? []; track bestelling.bestellingId) {
+    <section class="bestelling-section">
+    <a>{{ 'user-page.bestelnummer' | translate }} #{{bestelling.bestellingId}}</a>
+    @for (bestellingproducten of bestelling.bestellingProducten ; track bestellingproducten.productBestellingNummer){
+      <p>{{bestellingproducten.product.productNaam}} ({{bestellingproducten.hoeveelheid_besteld}}x)</p>
+      }
+      <p>----------------------------------------------------------------------------------------------------------------</p>
+      <p>{{ 'user-page.totaalprijs' | translate }}: €{{bestelling.totaleprijs}}</p>
+      <a><br>{{ 'user-page.delivered' | translate }}</a>
+      <p>{{bestelling.fullname}}</p>
+      <p>{{bestelling.city}}</p>
+      <p>{{bestelling.address}}</p>
+      <p>{{bestelling.postcode}}</p>
+    </section>
+    }
+</section>

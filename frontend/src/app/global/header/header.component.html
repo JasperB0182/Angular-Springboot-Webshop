@@ -1,0 +1,27 @@
+<nav>
+  <img src="../assets/megekko-logo.png" height="90" width="90" class="logo-image" alt="Foto van logo" [routerLink]="['/']">
+  <li class="register/login">
+
+    @if (LoginService.isLoggedIn()){
+      <a id="Account-button" [routerLink]="['/user']">Account</a>
+    } @else {
+      <a id="Register-button" [routerLink]="['/register']">{{ 'header.registreer' | translate }}</a>
+      <a id="Login-button" [routerLink]="['/login']">Login</a>
+    }
+  </li>
+  <form class="search-bar" (ngSubmit)="zoekfunctie()">
+    <input type="text" placeholder="{{ 'header.searchartikel' | translate }}" [(ngModel)]="search" name="search">
+    <button type="submit">{{ 'header.zoeken' | translate }}</button>
+  </form>
+  <li class="register/login">
+    <a [routerLink]="['/products']">{{ 'header.categorieen' | translate }}</a>
+    @if (currentLanguage == "nl"){
+      <button class="language" (click)="useLanguage('en')">Switch to EN</button>
+    } @else if (currentLanguage == "en"){
+      <button class="language" (click)="useLanguage('nl')">Switch to NL</button>
+    }
+  </li>
+
+  <img src="../assets/shopping-cart.jpg" height="50" width="50" class="shopping-cart-image" alt="Shopping cart icon" [routerLink]="['/shopping-cart']">
+
+</nav>

@@ -1,0 +1,22 @@
+#category-choose-section {
+  padding-top: 15vh;
+  height: 85vh;
+}
+
+#category-container{
+  display: flex;
+  justify-content: space-evenly;
+}
+
+h1 {
+  color: black;
+  margin-left: 2rem;
+  margin-top: 2rem;
+  font-size: 2rem;
+}
+
+@media only screen and (max-width: 1127px) {
+  #category-container{
+  flex-direction: column;
+  }
+}

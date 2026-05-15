@@ -1,0 +1,38 @@
+#welcome-screen {
+  padding-top: 15vh;
+  height: 85vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-image: url("https://i.ibb.co/mFYc0Smm/computer-on-wooden-table-in-front-of-scenic-landscape-outsideddd-window-photo-1.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+#welcome-text {
+  justify-self: center;
+  color: white;
+  margin-bottom: 50vh;
+  text-align: center;
+  font-size: 40px;
+  position: absolute;
+  font-weight: bold;
+}
+
+
+
+#bekijk-assortiment {
+  padding: 1rem;
+  justify-content: center;
+  border-radius: 2rem;
+  border-style: none;
+  margin-top: 50vh;
+  position: absolute;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+#bekijk-assortiment:hover{
+  background-color: #8cd50a;
+  color: white;
+}

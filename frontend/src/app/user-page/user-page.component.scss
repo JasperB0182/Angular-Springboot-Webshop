@@ -1,0 +1,50 @@
+#user-page {
+  padding-top: 15vh;
+  height: 85vh;
+  display: flex;
+  flex-direction: column;
+}
+
+.bestelling-section {
+  background-color: #c1e390;
+  margin-bottom: 4vh;
+  margin-left: 20%;
+  margin-right: 20%;
+  padding-top: 2vh;
+  padding-bottom: 2vh;
+  border-style: solid;
+  font-size: 1rem;
+}
+
+#welkom-user {
+  font-size: 3rem;
+  margin-bottom: 6rem;
+}
+
+#mijn-orders{
+  font-size: 2rem;
+  margin-bottom: 2vh;
+}
+
+#logout{
+  opacity: 40%;
+  cursor: pointer;
+}
+
+a {
+  font-weight: bold;
+}
+
+@media only screen and (max-width: 785px) {
+  .bestelling-section {
+    margin-left: 5%;
+    margin-right: 5%;
+  }
+}
+
+@media only screen and (max-width: 522px) {
+  .bestelling-section {
+    font-size: 0.8rem;
+  }
+}
+

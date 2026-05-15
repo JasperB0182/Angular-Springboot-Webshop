@@ -1,0 +1,42 @@
+#register-form {
+  padding-top: 15vh;
+  height: 45vh;
+  background-color: #c1e390;
+  display: flex;
+  margin-left: 10%;
+  margin-right: 10%;
+  padding-bottom: 40vh;
+  justify-content: center;
+}
+
+#grote-tekst{
+  font-size: 5vw;
+  text-align: center;
+  margin-bottom: 15vh;
+}
+
+.inloggen-email {
+  display: flex;
+  flex-direction: column;
+
+  margin-bottom: 5vh;
+  input{
+    padding: 8px;
+    margin-bottom: 10px;
+  }
+}
+
+button {
+  margin-left: 40%;
+  padding: 8px;
+  border-style: none;
+  border-radius: 0.5rem;
+  background-color: white;
+  cursor: pointer;
+}
+
+.password-recommendation {
+  opacity: 40%;
+}
+
+

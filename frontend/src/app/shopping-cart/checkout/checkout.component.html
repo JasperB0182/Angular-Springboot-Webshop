@@ -1,0 +1,13 @@
+<section id="checkout">
+  <form (ngSubmit)="checkout()" #checkoutForm="ngForm">
+      <label for="address">{{ 'checkout.adres' | translate }}</label>
+      <input id="address" type="text" [(ngModel)]="address" name="adres" minlength="3" required>
+      <label for="fullname">{{ 'checkout.naam' | translate }}</label>
+      <input id="fullname" type="text" [(ngModel)]="fullname" name="volledigeNaam" minlength="3" required>
+      <label for="city">{{ 'checkout.stad' | translate }}:</label>
+      <input id="city" type="text" [(ngModel)]="city" name="stadsnaam" minlength="3" required>
+      <label for="postcode">{{ 'checkout.postcode' | translate }}:</label>
+      <input id="postcode" type="text" [(ngModel)]="postcode" name="postcode" minlength="3" required>
+      <button type="submit" [disabled]="checkoutForm.invalid">{{ 'checkout.bevestigen' | translate }}</button>
+  </form>
+</section>

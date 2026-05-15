@@ -1,0 +1,102 @@
+#product-details {
+  padding-top: 15vh;
+  height: 45vh;
+  margin-bottom: 7rem;
+  display: flex;
+  width: 100%;
+}
+
+#product-details-container {
+  flex-direction: row;
+
+}
+
+#koop-knop {
+  background-color: #f0f0f0;
+  color: black;
+  padding: 1rem;
+  border-radius: 2rem;
+  font-size: 14px;
+  cursor: pointer;
+  transition: 0.3s;
+  border-style: none;
+  margin-top: 2vh;
+}
+
+#koop-knop:hover {
+  background-color: #8cd50a;
+  box-shadow: 0 0 0 5px #c1e390;
+  color: white;
+}
+
+#back-button {
+  display: block;
+  border-top-right-radius: 2rem;
+  border-bottom-right-radius: 2rem;
+  opacity: 40%;
+  cursor: pointer;
+}
+
+img {
+  margin-left: 5vw;
+  margin-top: 8vh;
+}
+
+.product-details-beschrijving {
+  max-width: 70rem;
+  margin-left: 2vw;
+}
+
+#product-details-naam {
+  margin-top: 10vh;
+  font-size: 1.8rem;
+}
+
+#product-details-prijs {
+  font-size: 1.5rem;
+  margin-top: 5vh;
+  margin-left: 1vw;
+}
+
+#product-details-met-specificaties {
+  background-color: #c1e390;
+  padding-bottom: 20vh;
+  margin-bottom: 5vh;
+  h1 {
+    font-size: 3rem;
+    margin-left: 2vw;
+    padding-top: 3vh;
+  }
+}
+
+#product-details-voorraad, #product-details-categorie, #product-details-brand {
+  margin-left: 1vw;
+}
+
+#product-details-voorraad {
+  margin-top: 4vh;
+}
+
+@media only screen and (max-width: 860px) {
+  #product-details{
+    flex-direction: column;
+    text-align: center;
+  }
+
+  img{
+    align-self: center;
+  }
+
+  #product-details-met-specificaties{
+    margin-top: 100vh;
+  }
+}
+
+@media only screen and (max-width: 344px) {
+  #product-details-met-specificaties{
+    h1{
+      font-size: 7vw;
+    }
+  }
+
+}
