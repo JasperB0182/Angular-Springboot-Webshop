@@ -1,0 +1,80 @@
+package com.s1155772.webshop.models;
+
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
+import jakarta.persistence.Entity;
+import jakarta.persistence.GeneratedValue;
+import jakarta.persistence.Id;
+import jakarta.persistence.OneToMany;
+
+import java.util.List;
+
+
+
+@Entity(name = "custom_user")
+public class CustomUser {
+
+    @Id
+    @GeneratedValue
+    private long id;
+
+    private String email;
+
+    private String password;
+
+    private String voornaam;
+
+
+    @OneToMany(mappedBy = "gebruiker")
+    @JsonIgnoreProperties("gebruiker")
+    private List<Bestelling> bestellingen;
+
+    public CustomUser() {
+    }
+
+    public CustomUser(String email, String password, String voornaam) {
+        this.email = email;
+        this.password = password;
+        this.voornaam = voornaam;
+    }
+
+    public List<Bestelling> getBestellingen() {
+        return bestellingen;
+    }
+
+    public void setBestellingen(List<Bestelling> bestellingen) {
+        this.bestellingen = bestellingen;
+    }
+
+    public String getVoornaam() {
+        return voornaam;
+    }
+
+    public void setVoornaam(String voornaam) {
+        this.voornaam = voornaam;
+    }
+
+    public String getEmail() {
+        return email;
+    }
+
+    public void setEmail(String email) {
+        this.email = email;
+    }
+
+    public String getPassword() {
+        return password;
+    }
+
+    public void setPassword(String password) {
+        this.password = password;
+    }
+
+    public long getId() {
+        return id;
+    }
+
+    public void setId(long id) {
+        this.id = id;
+    }
+
+}

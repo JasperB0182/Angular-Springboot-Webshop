@@ -1,0 +1,21 @@
+package com.s1155772.webshop.dao;
+
+import com.s1155772.webshop.models.Categorie;
+import org.springframework.stereotype.Component;
+
+import java.util.List;
+
+@Component
+public class CategoryDAO {
+
+    private CategoryRepository categoryRepository;
+
+    public CategoryDAO(CategoryRepository categoryRepository) {
+        this.categoryRepository = categoryRepository;
+    }
+
+    public List<Categorie> getAllCategories(){
+        List<Categorie> Categories = this.categoryRepository.findAll();
+        return Categories;
+    }
+}
