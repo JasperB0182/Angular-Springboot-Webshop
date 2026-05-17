@@ -1,6 +1,6 @@
 package com.s1155772.webshop.dao;
 
-import com.s1155772.webshop.models.Categorie;
+import com.s1155772.webshop.models.Category;
 import org.springframework.stereotype.Component;
 
 import java.util.List;
@@ -14,8 +14,8 @@ public class CategoryDAO {
         this.categoryRepository = categoryRepository;
     }
 
-    public List<Categorie> getAllCategories(){
-        List<Categorie> Categories = this.categoryRepository.findAll();
-        return Categories;
+    public List<Category> getAllCategories(){
+        List<Category> categories = this.categoryRepository.findAll();
+        return categories;
     }
 }

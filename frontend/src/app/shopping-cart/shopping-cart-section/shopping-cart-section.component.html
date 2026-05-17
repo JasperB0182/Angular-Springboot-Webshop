@@ -4,7 +4,7 @@
       <button id="empty-cart" (click)="shoppingcart.EmptyCart()">{{ 'winkelwagen.leeghalen' | translate }}</button>
       @if (Products){
         @for (product of Products ; track product){
-      <app-shopping-cart-product productImg="{{product.imgProduct}}" productNaam="{{product.productNaam}}" [productPrijs] = "product.prijs" [productWinkelwagen]="product.aantalInWinkelwagen"/>
+      <app-shopping-cart-product productImg="{{product.imgProduct}}" productNaam="{{product.productName}}" [productPrijs] = "product.price" [productWinkelwagen]="product.amountInCart"/>
         }
       }
     </section>

@@ -1,6 +1,6 @@
 package com.s1155772.webshop.models;
 
-import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
+import com.fasterxml.jackson.annotation.JsonManagedReference;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.Id;
@@ -21,36 +21,36 @@ public class CustomUser {
 
     private String password;
 
-    private String voornaam;
+    private String firstName;
 
 
-    @OneToMany(mappedBy = "gebruiker")
-    @JsonIgnoreProperties("gebruiker")
-    private List<Bestelling> bestellingen;
+    @OneToMany(mappedBy = "user")
+    @JsonManagedReference("user-order")
+    private List<Order> orderList;
 
     public CustomUser() {
     }
 
-    public CustomUser(String email, String password, String voornaam) {
+    public CustomUser(String email, String password, String firstName) {
         this.email = email;
         this.password = password;
-        this.voornaam = voornaam;
+        this.firstName = firstName;
     }
 
-    public List<Bestelling> getBestellingen() {
-        return bestellingen;
+    public List<Order> getOrderList() {
+        return orderList;
     }
 
-    public void setBestellingen(List<Bestelling> bestellingen) {
-        this.bestellingen = bestellingen;
+    public void setOrderList(List<Order> orders) {
+        this.orderList = orders;
     }
 
-    public String getVoornaam() {
-        return voornaam;
+    public String getFirstName() {
+        return firstName;
     }
 
-    public void setVoornaam(String voornaam) {
-        this.voornaam = voornaam;
+    public void setFirstName(String voornaam) {
+        this.firstName = voornaam;
     }
 
     public String getEmail() {

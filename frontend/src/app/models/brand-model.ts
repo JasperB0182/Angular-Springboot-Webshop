@@ -1,8 +1,8 @@
 import {Product} from './product-model';
 
 export interface Brand {
-  merkId: number;
-  merkNaam: string;
+  brandId: number;
+  brandName: string;
   imgLocation: string;
   products?: Product[];
 }

@@ -1,9 +1,9 @@
 package com.s1155772.webshop.dao;
 
-import com.s1155772.webshop.models.Bestelling;
+import com.s1155772.webshop.models.OrderProduct;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
 
 @Repository
-public interface BestellingRepository extends JpaRepository<Bestelling, Long> {
+public interface OrderProductRepository extends JpaRepository<OrderProduct, Long> {
 }

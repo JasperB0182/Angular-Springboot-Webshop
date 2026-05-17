@@ -1,4 +1,4 @@
-package com.s1155772.webshop.dao;import com.s1155772.webshop.models.Categorie;
+package com.s1155772.webshop.dao;import com.s1155772.webshop.models.Category;
 import com.s1155772.webshop.models.Product;
 import org.springframework.stereotype.Component;
 
@@ -24,8 +24,8 @@ public class ProductDAO {
     }
 
     public List<Product> getProductsByCategory(String categoryName) {
-        Categorie categorie = this.categoryRepository.findBycategoryName(categoryName);
-        return this.productRepository.findByCategorie(categorie);
+        Category category = this.categoryRepository.findBycategoryName(categoryName);
+        return this.productRepository.findByCategory(category);
     }
 
 
@@ -42,7 +42,7 @@ public class ProductDAO {
         List<Product> products = this.productRepository.findAll();
         List<Product> Searchproduct = new ArrayList<>();
         for (Product product : products){
-            if (product.getProductNaam().toLowerCase().contains(name.toLowerCase())){
+            if (product.getProductName().toLowerCase().contains(name.toLowerCase())){
                 Searchproduct.add(product);
             }
         }

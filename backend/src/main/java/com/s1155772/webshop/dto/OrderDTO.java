@@ -1,13 +1,12 @@
 package com.s1155772.webshop.dto;
 
 import com.s1155772.webshop.models.Product;
-import jakarta.validation.constraints.Min;
 import jakarta.validation.constraints.NotNull;
 import jakarta.validation.constraints.Size;
 
 import java.util.List;
 
-public class BestellingDTO {
+public class OrderDTO {
 
     @NotNull
     private List<Product> products;
@@ -22,22 +21,22 @@ public class BestellingDTO {
     private String city;
 
     @Size(min=6, max=6)
-    private String postcode;
+    private String zipcode;
 
-    public BestellingDTO(List<Product> products, String address, String fullname, String city, String postcode) {
+    public OrderDTO(List<Product> products, String address, String fullname, String city, String zipcode) {
         this.products = products;
         this.address = address;
         this.fullname = fullname;
         this.city = city;
-        this.postcode = postcode;
+        this.zipcode = zipcode;
     }
 
-    public String getPostcode() {
-        return postcode;
+    public String getZipcode() {
+        return zipcode;
     }
 
-    public void setPostcode(String postcode) {
-        this.postcode = postcode;
+    public void setZipcode(String zipcode) {
+        this.zipcode = zipcode;
     }
 
     public void setFullname(String fullname) {

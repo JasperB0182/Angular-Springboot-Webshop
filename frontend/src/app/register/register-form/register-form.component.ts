@@ -16,7 +16,7 @@ import {TranslatePipe} from '@ngx-translate/core';
 })
 export class RegisterFormComponent implements OnInit{
 
-  protected voornaam : string = "";
+  protected firstName : string = "";
   protected email : string = "";
   protected password : string = "";
 
@@ -24,7 +24,7 @@ export class RegisterFormComponent implements OnInit{
   protected router = inject(Router);
 
   protected register() {
-    const registerData = {email: this.email, password : this.password, voornaam: this.voornaam}
+    const registerData = {email: this.email, password : this.password, firstName: this.firstName}
     this.loginService.register(registerData).subscribe({
       next: (responseData) =>{
         this.router.navigate(["/user"]);

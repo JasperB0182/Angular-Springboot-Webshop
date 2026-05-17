@@ -7,7 +7,7 @@ import java.util.List;
 
 
 @Entity
-public class Categorie {
+public class Category {
 
     @Id
     @GeneratedValue
@@ -15,15 +15,15 @@ public class Categorie {
 
     private String categoryName;
 
-    @OneToMany(mappedBy = "categorie")
+    @OneToMany(mappedBy = "category")
     @JsonIgnoreProperties("category")
     private List<Product> products;
 
-    public Categorie(String categoryName) {
+    public Category(String categoryName) {
         this.categoryName = categoryName;
     }
 
-    public Categorie(){
+    public Category(){
 
     }
 

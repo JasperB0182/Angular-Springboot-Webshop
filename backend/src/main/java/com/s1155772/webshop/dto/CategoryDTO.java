@@ -1,10 +1,10 @@
 package com.s1155772.webshop.dto;
 
-public class CategorieDTO {
+public class CategoryDTO {
     private Long categoryId;
     private String categoryName;
 
-    public CategorieDTO(Long categoryId, String categoryName) {
+    public CategoryDTO(Long categoryId, String categoryName) {
         this.categoryId = categoryId;
         this.categoryName = categoryName;
     }

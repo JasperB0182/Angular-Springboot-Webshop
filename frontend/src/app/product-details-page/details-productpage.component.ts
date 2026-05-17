@@ -25,7 +25,7 @@ export class DetailsProductpageComponent implements OnInit{
   private destroyRef = inject(DestroyRef)
   protected shoppingcart = inject(ShoppingcartService);
   protected LoginService = inject(LoginService);
-  Products: any;
+  Product!: Product;
   private routeSub!: Subscription;
   webId! : string;
   apiLink!: string;
@@ -51,9 +51,9 @@ export class DetailsProductpageComponent implements OnInit{
       this.apiLink = environment.apiUrl +"/products/" + this.webId;
 
 
-      const subscription = this.httpClient.get<{ Product: Product }>(this.apiLink).subscribe({
+      const subscription = this.httpClient.get<Product>(this.apiLink).subscribe({
         next: (resData) => {
-          this.Products = resData;
+          this.Product = resData;
 
         },
         error: (error : 401) => {

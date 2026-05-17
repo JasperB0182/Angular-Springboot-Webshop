@@ -4,7 +4,6 @@ import com.s1155772.webshop.dao.*;
 import com.s1155772.webshop.models.*;
 import org.springframework.context.event.ContextRefreshedEvent;
 import org.springframework.context.event.EventListener;
-import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.stereotype.Component;
 
 @Component
@@ -15,20 +14,20 @@ public class Seeder {
 
     private CategoryRepository categoryRepository;
 
-    private BestellingRepository bestellingRepository;
+    private OrderRepository orderRepository;
 
-    private BestellingProductRepository bestellingProductRepository;
+    private OrderProductRepository orderProductRepository;
 
 
 
     private UserRepository userRepository;
 
-    public Seeder(ProductRepository productRepository, BrandRepository brandRepository, CategoryRepository categoryRepository, BestellingRepository bestellingRepository, BestellingProductRepository bestellingProductRepository, UserRepository userRepository) {
+    public Seeder(ProductRepository productRepository, BrandRepository brandRepository, CategoryRepository categoryRepository, OrderRepository orderRepository, OrderProductRepository orderProductRepository, UserRepository userRepository) {
         this.productRepository = productRepository;
         this.brandRepository = brandRepository;
         this.categoryRepository = categoryRepository;
-        this.bestellingRepository = bestellingRepository;
-        this.bestellingProductRepository = bestellingProductRepository;
+        this.orderRepository = orderRepository;
+        this.orderProductRepository = orderProductRepository;
         this.userRepository = userRepository;
     }
 
@@ -37,9 +36,9 @@ public class Seeder {
 
 
 
-        Categorie videokaarten = new Categorie("Videokaarten");
-        Categorie processoren = new Categorie("Processoren");
-        Categorie moederborden = new Categorie("Moederborden");
+        Category videokaarten = new Category("Videokaarten");
+        Category processoren = new Category("Processoren");
+        Category moederborden = new Category("Moederborden");
         this.categoryRepository.save(videokaarten);
         this.categoryRepository.save(processoren);
         this.categoryRepository.save(moederborden);

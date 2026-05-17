@@ -30,7 +30,7 @@ export class CheckoutComponent implements OnInit{
   protected address = ""
   protected fullname = ""
   protected city = ""
-  protected postcode = ""
+  protected zipcode = ""
   protected httpClient = inject(HttpClient);
   protected userDetail? : UserDetails;
   protected destroyRef = inject(DestroyRef)
@@ -61,7 +61,7 @@ export class CheckoutComponent implements OnInit{
     this.shoppingcart.setAddress(this.address)
     this.shoppingcart.setFullname(this.fullname)
     this.shoppingcart.setCity(this.city)
-    this.shoppingcart.setPostcode(this.postcode)
+    this.shoppingcart.setzipcode(this.zipcode.replace(" ", ""))
     this.shoppingcart.checkout()
     this.router.navigate(['/']);
     if (this.currentLanguage == "nl") {

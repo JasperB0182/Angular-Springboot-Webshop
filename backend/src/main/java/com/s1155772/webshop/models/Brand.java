@@ -14,9 +14,9 @@ import java.util.List;
 public class Brand {
     @Id
     @GeneratedValue
-    private int merkId;
+    private int brandId;
 
-    private String merkNaam;
+    private String brandName;
 
     private String imgLocation;
 
@@ -24,8 +24,8 @@ public class Brand {
     @JsonIgnoreProperties("brand")
     private List<Product> products;
 
-    public Brand(String MerkNaam, String imgLocation) {
-        this.merkNaam = MerkNaam;
+    public Brand(String brandName, String imgLocation) {
+        this.brandName = brandName;
         this.imgLocation = imgLocation;
     }
 
@@ -41,12 +41,12 @@ public class Brand {
         this.products = products;
     }
 
-    public String getMerkNaam() {
-        return merkNaam;
+    public String getBrandName() {
+        return brandName;
     }
 
-    public void setMerkNaam(String merk_naam) {
-        this.merkNaam = merk_naam;
+    public void setBrandName(String merk_naam) {
+        this.brandName = merk_naam;
     }
 
     public String getImgLocation() {
@@ -57,11 +57,11 @@ public class Brand {
         this.imgLocation = imgLocation;
     }
 
-    public int getMerkId() {
-        return merkId;
+    public int getBrandId() {
+        return brandId;
     }
 
-    public void setMerkId(int merk_id) {
-        this.merkId = merk_id;
+    public void setBrandId(int merk_id) {
+        this.brandId = merk_id;
     }
 }

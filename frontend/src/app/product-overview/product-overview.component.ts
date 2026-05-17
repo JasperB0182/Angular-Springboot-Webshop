@@ -25,7 +25,7 @@ export class ProductOverviewComponent implements OnInit{
   protected translate = inject(TranslateService);
   private httpClient = inject(HttpClient)
   private destroyRef = inject(DestroyRef)
-  Products: any;
+  Products!: Product[];
   private routeSub!: Subscription;
   public urlParameter: string = '';
   protected api_link = ""
@@ -54,7 +54,7 @@ export class ProductOverviewComponent implements OnInit{
     }
 
 
-    const subscription = this.httpClient.get<{Product : Product}>(this.api_link).subscribe({
+    const subscription = this.httpClient.get<Product[]>(this.api_link).subscribe({
       next: (resData) => {
         this.Products = resData;
       },

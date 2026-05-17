@@ -2,26 +2,26 @@ package com.s1155772.webshop.dto;
 
 public class ProductDTO {
     private Long productId;
-    private String productNaam;
-    private String beschrijving;
-    private double prijs;
-    private int aantalInWinkelwagen;
-    private int hoeveelheid;
+    private String productName;
+    private String description;
+    private double price;
+    private int amountInCart;
+    private int amount;
     private String imgProduct;
 
     private BrandDTO brand;
-    private CategorieDTO categorie;
+    private CategoryDTO category;
 
-    public ProductDTO(Long productId, String productNaam, String beschrijving, double prijs, int aantalInWinkelwagen, int hoeveelheid, String imgProduct, BrandDTO brand, CategorieDTO categorie) {
+    public ProductDTO(Long productId, String productName, String description, double price, int amountInCart, int amount, String imgProduct, BrandDTO brand, CategoryDTO category) {
         this.productId = productId;
-        this.productNaam = productNaam;
-        this.beschrijving = beschrijving;
-        this.prijs = prijs;
-        this.aantalInWinkelwagen = aantalInWinkelwagen;
-        this.hoeveelheid = hoeveelheid;
+        this.productName = productName;
+        this.description = description;
+        this.price = price;
+        this.amountInCart = amountInCart;
+        this.amount = amount;
         this.imgProduct = imgProduct;
         this.brand = brand;
-        this.categorie = categorie;
+        this.category = category;
     }
 
     public Long getProductId() {
@@ -32,44 +32,44 @@ public class ProductDTO {
         this.productId = productId;
     }
 
-    public String getProductNaam() {
-        return productNaam;
+    public String getProductName() {
+        return productName;
     }
 
-    public void setProductNaam(String productNaam) {
-        this.productNaam = productNaam;
+    public void setProductName(String productName) {
+        this.productName = productName;
     }
 
-    public String getBeschrijving() {
-        return beschrijving;
+    public String getDescription() {
+        return description;
     }
 
-    public void setBeschrijving(String beschrijving) {
-        this.beschrijving = beschrijving;
+    public void setDescription(String description) {
+        this.description = description;
     }
 
-    public double getPrijs() {
-        return prijs;
+    public double getPrice() {
+        return price;
     }
 
-    public void setPrijs(double prijs) {
-        this.prijs = prijs;
+    public void setPrice(double price) {
+        this.price = price;
     }
 
-    public int getAantalInWinkelwagen() {
-        return aantalInWinkelwagen;
+    public int getAmountInCart() {
+        return amountInCart;
     }
 
-    public void setAantalInWinkelwagen(int aantalInWinkelwagen) {
-        this.aantalInWinkelwagen = aantalInWinkelwagen;
+    public void setAmountInCart(int amountInCart) {
+        this.amountInCart = amountInCart;
     }
 
-    public int getHoeveelheid() {
-        return hoeveelheid;
+    public int getAmount() {
+        return amount;
     }
 
-    public void setHoeveelheid(int hoeveelheid) {
-        this.hoeveelheid = hoeveelheid;
+    public void setAmount(int amount) {
+        this.amount = amount;
     }
 
     public String getImgProduct() {
@@ -88,11 +88,11 @@ public class ProductDTO {
         this.brand = brand;
     }
 
-    public CategorieDTO getCategorie() {
-        return categorie;
+    public CategoryDTO getCategory() {
+        return category;
     }
 
-    public void setCategorie(CategorieDTO categorie) {
-        this.categorie = categorie;
+    public void setCategory(CategoryDTO category) {
+        this.category = category;
     }
 }

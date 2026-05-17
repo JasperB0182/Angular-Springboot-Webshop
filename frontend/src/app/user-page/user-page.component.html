@@ -1,22 +1,22 @@
 <section id="user-page">
   <button id="logout" (click)="LoginService.logOut()">Logout</button>
-  <p id="welkom-user">{{ 'user-page.welkom' | translate }}, {{userDetail?.voornaam}}</p>
+  <p id="welkom-user">{{ 'user-page.welkom' | translate }},</p>
 
   <p id="mijn-orders">{{ 'user-page.mijnbestellingen' | translate }}</p>
 
-  @for (bestelling of userDetail?.bestellingen ?? []; track bestelling.bestellingId) {
+  @for (order of orders; track order.orderId) {
     <section class="bestelling-section">
-    <a>{{ 'user-page.bestelnummer' | translate }} #{{bestelling.bestellingId}}</a>
-    @for (bestellingproducten of bestelling.bestellingProducten ; track bestellingproducten.productBestellingNummer){
-      <p>{{bestellingproducten.product.productNaam}} ({{bestellingproducten.hoeveelheid_besteld}}x)</p>
+    <a>{{ 'user-page.bestelnummer' | translate }} #{{order.orderId}}</a>
+    @for (orderProducts of order.orderProducts ; track orderProducts.productOrderNumber){
+      <p>{{orderProducts.product.productName}} ({{orderProducts.amountBought}}x)</p>
       }
       <p>----------------------------------------------------------------------------------------------------------------</p>
-      <p>{{ 'user-page.totaalprijs' | translate }}: €{{bestelling.totaleprijs}}</p>
+      <p>{{ 'user-page.totaalprijs' | translate }}: €{{order.totalPrice}}</p>
       <a><br>{{ 'user-page.delivered' | translate }}</a>
-      <p>{{bestelling.fullname}}</p>
-      <p>{{bestelling.city}}</p>
-      <p>{{bestelling.address}}</p>
-      <p>{{bestelling.postcode}}</p>
+      <p>{{order.fullname}}</p>
+      <p>{{order.city}}</p>
+      <p>{{order.address}}</p>
+      <p>{{order.zipcode}}</p>
     </section>
     }
 </section>

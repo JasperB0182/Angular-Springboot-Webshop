@@ -2,7 +2,7 @@
 
   @if (ShowcaseProducts?.length){
     @for (Showcaseproduct of ShowcaseProducts.slice(0, 6) ; track Showcaseproduct.productId){
-      <app-product-showcase productnaam="{{Showcaseproduct.productNaam}}" fotolocatie="{{Showcaseproduct.imgProduct}}" productId="{{ Showcaseproduct.productId }}"/>
+      <app-product-showcase productName="{{Showcaseproduct.productNaam}}" fotolocatie="{{Showcaseproduct.imgProduct}}" productId="{{ Showcaseproduct.productId }}"/>
     }
   } @else {
     <p>Loading products..</p>

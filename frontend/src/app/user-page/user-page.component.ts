@@ -5,6 +5,7 @@ import {HttpClient} from '@angular/common/http';
 import {UserDetails} from '../models/user.details.model';
 import {environment} from '../../environments/environment';
 import {TranslatePipe} from '@ngx-translate/core';
+import {Order} from '../models/order-model';
 
 @Component({
   selector: 'app-user-page',
@@ -24,6 +25,8 @@ export class UserPageComponent implements OnInit{
 
   public userDetail? : UserDetails;
 
+  protected orders! : Order[];
+
   protected destroyRef = inject(DestroyRef);
 
   ngOnInit() {
@@ -31,9 +34,9 @@ export class UserPageComponent implements OnInit{
       this.router.navigate(["/login"]);
     }
 
-    const subscription = this.httpClient.get<UserDetails>(environment.apiUrl + "/user/me").subscribe({
+    const subscription = this.httpClient.get<Order[]>(environment.apiUrl + "/order").subscribe({
       next: (resData) => {
-        this.userDetail = resData;
+        this.orders = resData;
 
       },
       error: () => {

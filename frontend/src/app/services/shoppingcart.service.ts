@@ -17,7 +17,7 @@ export class ShoppingcartService{
   protected address = ""
   protected fullname = ""
   protected city = ""
-  protected postcode = ""
+  protected zipcode = ""
 
   constructor() {
     const savedCart = localStorage.getItem('productsCart');
@@ -44,8 +44,8 @@ export class ShoppingcartService{
     this.city = city
   }
 
-  public setPostcode(postcode : string){
-    this.postcode = postcode
+  public setzipcode(zipcode : string){
+    this.zipcode = zipcode
   }
 
 
@@ -56,11 +56,11 @@ export class ShoppingcartService{
       address: this.address,
       fullname: this.fullname,
       city: this.city,
-      postcode: this.postcode
+      zipcode: this.zipcode
     };
 
     this.httpClient.post(
-      (environment.apiUrl + '/bestelling/plaats'),
+      (environment.apiUrl + '/order/plaats'),
       bestelData
     ).subscribe(
       );
@@ -72,16 +72,16 @@ export class ShoppingcartService{
   public CalculateTotalCost() {
     this.totalCost = 0;
     for(let i=0; i<this.ProductsCart.length; i++){
-      this.totalCost += this.ProductsCart[i].prijs * this.ProductsCart[i].aantalInWinkelwagen;
+      this.totalCost += this.ProductsCart[i].price * this.ProductsCart[i].amountInCart;
     }
   }
 
 
   public AddToCart(Product : Product){
     const stringified = JSON.stringify(this.ProductsCart)
-    if (stringified.includes(Product.productNaam)){
+    if (stringified.includes(Product.productName)){
       let index = this.ProductsCart.findIndex((e) => e.productId === Product.productId)
-      this.ProductsCart[index].aantalInWinkelwagen += 1;
+      this.ProductsCart[index].amountInCart += 1;
       localStorage.setItem('productsCart', JSON.stringify(this.ProductsCart));
       this.addedtocartnotif()
     } else {
@@ -92,7 +92,7 @@ export class ShoppingcartService{
   }
 
   public RemoveFromCart(productNaam : string){
-    const index = this.ProductsCart.findIndex(Product => Product.productNaam === productNaam)
+    const index = this.ProductsCart.findIndex(Product => Product.productName === productNaam)
     this.ProductsCart.splice(index, 1)
     localStorage.setItem('productsCart', JSON.stringify(this.ProductsCart))
     window.location.reload()

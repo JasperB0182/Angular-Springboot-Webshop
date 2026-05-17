@@ -14,9 +14,9 @@ public class Product {
     @GeneratedValue
     private int productId;
 
-    private String productNaam;
+    private String productName;
 
-    private int hoeveelheid;
+    private int amount;
 
     @ManyToOne
     @JoinColumn(name = "brand", nullable = false)
@@ -24,52 +24,52 @@ public class Product {
     private Brand brand;
 
     @ManyToOne
-    @JoinColumn(name = "categorie", nullable = false)
+    @JoinColumn(name = "category", nullable = false)
     @JsonIgnoreProperties("products")
-    private Categorie categorie;
+    private Category category;
 
     @OneToMany(mappedBy = "product")
-    private List<BestellingProduct> bestellingProducten;
+    private List<OrderProduct> orderProductList;
 
-    private float prijs;
+    private float price;
 
     private String imgProduct;
 
-    private int aantalInWinkelwagen = 1;
+    private int amountInCart = 1;
 
     @Column(length = 1000)
-    private String beschrijving;
+    private String description;
 
     @Column(length = 1000)
-    private String beschrijvingEN;
+    private String descriptionEN;
 
-    public Product(String productNaam, int hoeveelheid, Brand brand, Categorie categorie, float prijs, String beschrijving, String beschrijvingEN, String imgProduct) {
-        this.productNaam = productNaam;
-        this.hoeveelheid = hoeveelheid;
-        this.categorie = categorie;
+    public Product(String productName, int amount, Brand brand, Category category, float price, String description, String descriptionEN, String imgProduct) {
+        this.productName = productName;
+        this.amount = amount;
+        this.category = category;
         this.brand = brand;
-        this.prijs = prijs;
-        this.beschrijving = beschrijving;
-        this.beschrijvingEN = beschrijvingEN;
+        this.price = price;
+        this.description = description;
+        this.descriptionEN = descriptionEN;
         this.imgProduct = imgProduct;
     }
 
 
 
-    public String getBeschrijvingEN() {
-        return beschrijvingEN;
+    public String getDescriptionEN() {
+        return descriptionEN;
     }
 
-    public void setBeschrijvingEN(String beschrijvingEN) {
-        this.beschrijvingEN = beschrijvingEN;
+    public void setDescriptionEN(String descriptionEN) {
+        this.descriptionEN = descriptionEN;
     }
 
-    public int getAantalInWinkelwagen() {
-        return aantalInWinkelwagen;
+    public int getAmountInCart() {
+        return amountInCart;
     }
 
-    public void setAantalInWinkelwagen(int aantalInWinkelwagen) {
-        this.aantalInWinkelwagen = aantalInWinkelwagen;
+    public void setAmountInCart(int amountInCart) {
+        this.amountInCart = amountInCart;
     }
 
     public String getImgProduct() {
@@ -84,28 +84,28 @@ public class Product {
 
     }
 
-    public Categorie getCategorie() {
-        return categorie;
+    public Category getcategory() {
+        return category;
     }
 
-    public void setCategorie(Categorie categorie) {
-        this.categorie = categorie;
+    public void setcategory(Category category) {
+        this.category = category;
     }
 
-    public String getProductNaam() {
-        return productNaam;
+    public String getProductName() {
+        return productName;
     }
 
-    public void setProductNaam(String productNaam) {
-        this.productNaam = productNaam;
+    public void setProductName(String ProductName) {
+        this.productName = ProductName;
     }
 
-    public int getHoeveelheid() {
-        return hoeveelheid;
+    public int getAmount() {
+        return amount;
     }
 
-    public void setHoeveelheid(int hoeveelheid) {
-        this.hoeveelheid = hoeveelheid;
+    public void setAmount(int Amount) {
+        this.amount = Amount;
     }
 
     public Brand getBrand() {
@@ -116,20 +116,20 @@ public class Product {
         this.brand = brand;
     }
 
-    public float getPrijs() {
-        return prijs;
+    public float getPrice() {
+        return price;
     }
 
-    public void setPrijs(float prijs) {
-        this.prijs = prijs;
+    public void setPrice(float price) {
+        this.price = price;
     }
 
-    public String getBeschrijving() {
-        return beschrijving;
+    public String getDescription() {
+        return description;
     }
 
-    public void setBeschrijving(String beschrijving) {
-        this.beschrijving = beschrijving;
+    public void setDescription(String description) {
+        this.description = description;
     }
 
     public int getProductId() {

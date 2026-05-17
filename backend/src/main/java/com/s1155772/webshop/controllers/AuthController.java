@@ -60,10 +60,10 @@ public class AuthController {
         }
         String encodedPassword = passwordEncoder.encode(authenticationDTO.password);
 
-        CustomUser registerdCustomUser = new CustomUser(authenticationDTO.email, encodedPassword, authenticationDTO.voornaam);
+        CustomUser registerdCustomUser = new CustomUser(authenticationDTO.email, encodedPassword, authenticationDTO.firstName);
         userDAO.save(registerdCustomUser);
         String token = jwtUtil.generateToken(registerdCustomUser.getEmail());
-        LoginResponse loginResponse = new LoginResponse(registerdCustomUser.getEmail(), token, registerdCustomUser.getVoornaam());
+        LoginResponse loginResponse = new LoginResponse(registerdCustomUser.getEmail(), token, registerdCustomUser.getFirstName());
         return ResponseEntity.ok(loginResponse);
     }
 
@@ -78,7 +78,7 @@ public class AuthController {
             String token = jwtUtil.generateToken(body.email);
 
             CustomUser customUser = userDAO.findByEmail(body.email);
-            LoginResponse loginResponse = new LoginResponse(customUser.getEmail(), token, customUser.getVoornaam());
+            LoginResponse loginResponse = new LoginResponse(customUser.getEmail(), token, customUser.getFirstName());
 
 
             return ResponseEntity.ok(loginResponse);

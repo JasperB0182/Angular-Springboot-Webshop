@@ -1,11 +1,11 @@
 
 <app-product-overview-head />
-@if (Products?.length){
+@if (Products.length){
   @for (product of Products ; track product.productId){
     @if (this.currentLanguage == "nl"){
-    <app-product-overview-card productnaam="{{product.productNaam}}" productimg="{{product.imgProduct}}" productprijs = {{product.prijs}} productbrandimg = "{{ product.brand.imgLocation }}" productId="{{ product.productId }}" productBeschrijving="{{product.beschrijving}}"/>
+    <app-product-overview-card productName="{{product.productName}}" productimg="{{product.imgProduct}}" productprijs ="{{product.price}}" productbrandimg = "{{ product.brand.imgLocation }}" productId="{{ product.productId }}" productBeschrijving="{{product.description}}"/>
     } @else {
-      <app-product-overview-card productnaam="{{product.productNaam}}" productimg="{{product.imgProduct}}" productprijs = {{product.prijs}} productbrandimg = "{{ product.brand.imgLocation }}" productId="{{ product.productId }}" productBeschrijving="{{product.beschrijvingEN}}"/>
+      <app-product-overview-card productName="{{product.productName}}" productimg="{{product.imgProduct}}" productprijs ="{{product.price}}" productbrandimg = "{{ product.brand.imgLocation }}" productId="{{ product.productId }}" productBeschrijving="{{product.descriptionEN}}"/>
     }
   }
 

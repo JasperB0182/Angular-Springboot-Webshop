@@ -1,15 +1,15 @@
 import {Brand} from './brand-model';
-import {Categorie} from './categorie-model';
+import {Category} from './category-model';
 
 export interface Product{
   productId: number;
-  productNaam: string;
-  hoeveelheid: number;
+  productName: string;
+  amount: number;
   brand: Brand;
-  categorie: Categorie;
-  prijs: number;
+  category: Category;
+  price: number;
   imgProduct: string;
-  beschrijving: string;
-  beschrijvingEN: string;
-  aantalInWinkelwagen: number;
+  description: string;
+  descriptionEN: string;
+  amountInCart: number;
 }

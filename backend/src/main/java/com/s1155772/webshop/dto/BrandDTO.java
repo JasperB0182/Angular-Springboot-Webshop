@@ -1,13 +1,13 @@
 package com.s1155772.webshop.dto;
 
 public class BrandDTO {
-    private Long merkId;
-    private String merkNaam;
+    private Long brandId;
+    private String brandName;
     private String imgLocation;
 
-    public BrandDTO(Long merkId, String merkNaam, String imgLocation) {
-        this.merkId = merkId;
-        this.merkNaam = merkNaam;
+    public BrandDTO(Long brandId, String brandName, String imgLocation) {
+        this.brandId = brandId;
+        this.brandName = brandName;
         this.imgLocation = imgLocation;
     }
 }

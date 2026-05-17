@@ -7,7 +7,7 @@
       <label for="city">{{ 'checkout.stad' | translate }}:</label>
       <input id="city" type="text" [(ngModel)]="city" name="stadsnaam" minlength="3" required>
       <label for="postcode">{{ 'checkout.postcode' | translate }}:</label>
-      <input id="postcode" type="text" [(ngModel)]="postcode" name="postcode" minlength="3" required>
+      <input id="postcode" type="text" [(ngModel)]="zipcode" name="postcode" minlength="3" (keydown.space)="$event.preventDefault()" required>
       <button type="submit" [disabled]="checkoutForm.invalid">{{ 'checkout.bevestigen' | translate }}</button>
   </form>
 </section>

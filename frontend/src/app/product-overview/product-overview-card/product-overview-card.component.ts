@@ -10,7 +10,7 @@ import {RouterLink} from '@angular/router';
   styleUrl: './product-overview-card.component.scss'
 })
 export class ProductOverviewCardComponent {
-  @Input() productnaam : string = '';
+  @Input() productName : string = '';
   @Input() productimg : string = '';
   @Input() productbrandimg : string = '';
   @Input() productId : string = '';

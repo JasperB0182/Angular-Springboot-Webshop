@@ -10,7 +10,7 @@ import {RouterLink} from '@angular/router';
   styleUrl: './product-showcase.component.scss'
 })
 export class ProductShowcaseComponent {
-  @Input() productnaam: string = '';
+  @Input() productName: string = '';
   @Input() fotolocatie: string = '';
   @Input() productId: string = '';
 }
