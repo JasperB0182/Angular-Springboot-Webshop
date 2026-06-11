@@ -12,19 +12,33 @@ jobs:
       - name: Checkout code
         uses: actions/checkout@v4
 
+      # ---------------- BACKEND BUILD ----------------
+
       - name: Set up JDK 21
         uses: actions/setup-java@v4
         with:
           distribution: temurin
           java-version: "21"
 
+      - name: Build backend with Maven
+        working-directory: backend
+        run: mvn clean package -DskipTests
+
+      - name: Verify backend JAR exists
+        run: ls -lah backend/target
+
+      # ---------------- DOCKER SETUP ----------------
+
       - name: Set up Docker Buildx
         uses: docker/setup-buildx-action@v3
 
-      - name: Log in to Docker Hub 
-        run: docker login -u s1155772 -p ${{ secrets.DOCKER_HUB_TOKEN }}
+      - name: Log in to Docker Hub
+        uses: docker/login-action@v3
+        with:
+          username: s1155772
+          password: ${{ secrets.DOCKER_HUB_TOKEN }}
 
-      # ---------------- BACKEND ----------------
+      # ---------------- BACKEND IMAGE ----------------
 
       - name: Build & push backend image
         uses: docker/build-push-action@v6
@@ -34,7 +48,7 @@ jobs:
           tags: s1155772/webshop-backend:latest
           platforms: linux/amd64
 
-      # ---------------- FRONTEND ----------------
+      # ---------------- FRONTEND IMAGE ----------------
 
       - name: Build & push frontend image
         uses: docker/build-push-action@v6
